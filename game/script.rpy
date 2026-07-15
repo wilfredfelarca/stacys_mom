@@ -28,6 +28,14 @@ label start:
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    # This ends the game.
+    jump start_minigame #label in File 'minigame_fable_2'
+    # After the minigame, it will jump to "end", as specified in said file!
+    # TODO: Make a dedicated function "label" for the minigame script to jump to when its done!
+    # It will work by having some dedicated plot variable that it checks via else-if to know which scene to jump to!!
 
+    
+
+label end:
+
+    # This ends the game.
     return
