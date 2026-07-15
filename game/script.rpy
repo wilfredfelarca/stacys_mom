@@ -143,9 +143,103 @@ label seq1b:
 
 label seq2:
     scene black
-    # Replace this with an actual bg later.
 
-    "lorum ipsum"
+    "You remember the first time you met Stacy’s mom."
+
+    scene bg house_outside with dissolve
+    show layer master at sepia
+
+    "It was hot out, and you recently found out you and Stacy were neighbors. She invited you over, telling you her house had a newly built pool."
+
+    "Without thinking much about it, you headed over to chill with Stacy at her new pool."
+
+    show mom neutral with dissolve
+    show bg house_outside_blur with dissolve
+    "What greeted you at the door was a stunning older woman who resembled Stacy a lot."
+
+    "She was in her late 30s, or maybe even early 40s, and she looked great for her age. You remember your eyes almost popping out of their sockets from how wide they went."
+
+    m "Oh! You must be [name]! Stacy told me all about you, it’s so good to finally meet you, dear!"
+
+    "Stacy told her mom about you...? But why? It’s not like you were best friends or anything."
+
+    "Yeah, you both hung out from time to time, but it was more of a casual \"Hey wanna eat lunch together?\" or \"Wanna partner up for this project?\" type of friendship since you both didn’t really talk to many people."
+
+    "After meeting her mother, it’s safe to say that..."
+
+    "{i}Stacy’s mom has got it going on.{/i}"
+
+    m "Come in! It’s sooooo hot out today."
+
+    m "My daughter’s in the backyard, probably already taking a dip in the new pool."
+
+    m "Why don’t you join her? I’ll make you kids some lemonade and snacks to eat."
+
+    "As if on instinct, you obeyed the older woman and found yourself walking towards the backyard of their house."
+
+    scene bg garden with dissolve
+    show layer master at sepia
+    "..."
+
+    "You see Stacy waving at you from outside the sliding glass door."
+
+    "And her mom was right, she was already taking a dip in the pool. She looked so carefree, it made you want to join her in the water."
+
+    show bg garden_blur with dissolve
+    s "Hey! You made it."
+
+    s "The water's nice, come have a dip!"
+
+    "As she got out of the pool, you couldn’t help but stare a little."
+
+    "She looked... {i}pretty{/i}. But your mind was so distracted by seeing her mom, so you didn’t even spare her another glance."
+
+    p "Was that your mom...?"
+
+    "You asked, gesturing behind you. You felt pathetic as your voice cracked while doing so."
+
+    s "Yeah, don’t mind her. She’s a bit much. It’s why I don’t really bring friends over."
+
+    p "Eh... It’s fine..."
+
+    p "She’s very... {i}welcoming{/i}, that’s for sure..."
+
+    s "You okay...? You look a bit red."
+
+    "Feeling embarrassed, you didn’t think twice about what you were doing and-"
+
+    "{size=70}SPLASH...!{/size}" with vpunch
+
+    "You jumped in the pool with no hesitation, trying to cool yourself off. You didn’t want Stacy to think you were blushing or {i}something{/i}..."
+
+    "That would’ve been embarrassing. You? Blushing over her {i}mom{/i}?"
+
+    "You'd rather {i}drown{/i} in this pool than her finding out."
+
+    m "I made snaaacks!~"
+
+    "As you looked over at Stacy’s mom, you felt your head getting hazy again."
+
+    "Stacy’s mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
+
+    show mom bathsuit with dissolve
+    "{i}She was in her bathing suit.{/i}"
+
+    "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone’s ankles for the first time."
+
+    "Before you knew it, you felt your vision fading as you blacked out while still in the pool."
+
+    s "{b}[name]!!!{/b}" with vpunch
+
+    scene black
+    jump seq3
+
+label seq3:
+    "..."
+
+    "The day of the reunion, you put your best outfit on. You didn’t want to show up to this reunion looking like a bum, so might as well dress up."
+
+
 
 label seq7:
 
