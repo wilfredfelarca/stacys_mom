@@ -4,6 +4,9 @@
 # name of the character.
 
 default name = "Bepis" #Bepis is the failsafe player name. Don't ask.
+default stacyLove = 0
+default momLove = 0
+
 
 define p = Character(_("[name]"), color="#dbce8e")
 define s = Character(_("Stacy"), color="#b535c9")
@@ -239,6 +242,51 @@ label seq3:
 
     "The day of the reunion, you put your best outfit on. You didn’t want to show up to this reunion looking like a bum, so might as well dress up."
 
+    "As you got ready, you heard your phone buzz."
+
+    "{i}(BZZT BZZT){/i}"
+
+    "It was Stacy."
+
+    s "Hi! What time are you arriving for the reunion?"
+
+    menu:
+        "Reply":
+            $ stacyLove += 1
+            $ renpy.notify("Stacy bond up!")
+            p "{i}hey! ill be there at around 5:30 pm. i dont really want to be the first person to arrive haha,,{/i}"
+
+            p "{i}what about you?{/i}"
+
+            s "{i}I’ll arrive at around the same time as you then! I don’t really know who I’d hang around with if I arrived before you lol.{/i}"
+
+            p "{i}alrightyy, ill see u later then?{/i}"
+
+            s "{i}See you! xx{/i}"
+
+        "Leave her on read":
+            "Better not get distracted... You need to make sure you look decent for this silly reunion."
+
+    "By the time you finished getting ready, you took one last glance at the mirror."
+
+    "That’s good enough... You at least look put together."
+
+    "It was now 5:01 pm, and thankfully your old college was relatively close to your place. Give or take 15 minutes without traffic and 20-something minutes with."
+
+    "..."
+
+    scene bg schoolpark_sunset
+    "Here you are again..."
+
+    "{b}{i}Saint Ander Dingus’ Institute of Learning.{/i}{/b}"
+
+    ### CONTINUE FROM HERE, THE BELOW IS PLACEHOLDER FOR SIR
+
+    "Where this demo ends...!"
+
+    "Sorry but we'll need more time to cook up the rest of the game!"
+
+    "For now, have a shot at our very rudimentary minigame :]"
 
 
 label seq7:
