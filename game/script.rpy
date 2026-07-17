@@ -312,6 +312,58 @@ label seq3:
     show stacy happy with dissolve
     s "[name], you made it...!"
 
+    "There you stood, face-to-face with someone you haven’t seen in a decade. You couldn’t help but feel the nostalgia kicking in."
+
+    "It’s like being back in college, except this time you’re both grown-ups now."
+
+    "You look at Stacy, and you can’t help but notice that she looks more like her mom now that she’s grown older."
+
+    "She goes in for a hug, and you freeze on the spot, not knowing what to do."
+
+    show stacy sad with dissolve
+    s "This reunion sucks... Do you want to get out of here?"
+
+    "She murmurs as she clings to you. You don’t know what happened at the reunion, but all the more reason to get out of here."
+
+    "Right...?"
+
+    p "Hey, what happened in there?"
+
+    s "I saw my ex, and he’s married to the girl he cheated on me with..."
+
+    hide stacy
+    "Before you could offer to take her someplace else, you see a luxurious sports car pull up towards you both."
+
+    "Inside the car, you see none other than Stacy’s mom herself."
+
+    "{b}And she {i}still{/i} has it going on...!{/b}"
+
+    show mom sad with dissolve
+    m "I got your text, are you okay sweetie...?"
+
+    "You didn’t think it was possible, but Stacy’s mom got even hotter. She was probably in her early 50’s by now, and she looked {i}great{/i}."
+
+    show mom surprise with dissolve
+    "When she noticed you, she lowered her sunglasses and looked you up and down with a mix of curiosity and surprise in her eyes."
+
+    m "[name]... is that you?"
+
+    "You felt your ears getting red as you scrambled for your words, and it just made Stacy and her mom giggle."
+
+    show stacy happy at midleft with dissolve
+    show mom happy at midright with dissolve
+    s "Wanna get out of here?"
+
+    "You find yourself nodding at the offer, and you almost feel embarrassed at how eager you are." with vpunch
+
+    "But to be honest? You’d rather catch up with these two gorgeous ladies than having to sit through a reunion where everybody pretends to like each other."
+
+    "When in reality, they probably used this reunion as an excuse to show off and feel better about themselves."
+    scene black with dissolve
+    jump seq4
+
+label seq4:
+    ""
 
 label seq7:
 
