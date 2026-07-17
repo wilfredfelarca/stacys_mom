@@ -13,8 +13,18 @@ define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 
 # Transforms for various uses such as tweening the characters or scenes.
-transform sepia:
-    matrixcolor TintMatrix("#d7be89")
+#transform sepia:
+    #matrixcolor TintMatrix("#d7be89")
+
+# Center the sprite 25% across the screen
+transform midleft:
+    yalign 1.0
+    xcenter 0.25
+
+# Center the sprite 75% across the screen
+transform midright:
+    yalign 1.0
+    xcenter 0.75
 
 # The game starts here.
 
@@ -150,7 +160,7 @@ label seq2:
     "You remember the first time you met Stacy’s mom."
 
     scene bg house_outside with dissolve
-    show layer master at sepia
+    #show layer master at sepia
 
     "It was hot out, and you recently found out you and Stacy were neighbors. She invited you over, telling you her house had a newly built pool."
 
@@ -181,7 +191,7 @@ label seq2:
     "As if on instinct, you obeyed the older woman and found yourself walking towards the backyard of their house."
 
     scene bg garden with dissolve
-    show layer master at sepia
+    #show layer master at sepia
     "..."
 
     "You see Stacy waving at you from outside the sliding glass door."
@@ -189,6 +199,7 @@ label seq2:
     "And her mom was right, she was already taking a dip in the pool. She looked so carefree, it made you want to join her in the water."
 
     show bg garden_blur with dissolve
+    show stacy swimsuit with dissolve
     s "Hey! You made it."
 
     s "The water's nice, come have a dip!"
@@ -211,6 +222,7 @@ label seq2:
 
     "Feeling embarrassed, you didn’t think twice about what you were doing and-"
 
+    hide stacy
     "{size=70}SPLASH...!{/size}" with vpunch
 
     "You jumped in the pool with no hesitation, trying to cool yourself off. You didn’t want Stacy to think you were blushing or {i}something{/i}..."
@@ -225,7 +237,8 @@ label seq2:
 
     "Stacy’s mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
 
-    show mom bathsuit with dissolve
+    show stacy swimsuit at midleft with dissolve
+    show mom swimsuit at midright with dissolve
     "{i}She was in her bathing suit.{/i}"
 
     "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone’s ankles for the first time."
@@ -280,13 +293,24 @@ label seq3:
 
     "{b}{i}Saint Ander Dingus’ Institute of Learning.{/i}{/b}"
 
-    ### CONTINUE FROM HERE, THE BELOW IS PLACEHOLDER FOR SIR
+    "It was almost 6 pm by the time you arrived. You hadn’t anticipated traffic to hold you off that much, but at least you made it."
 
-    "Where this demo ends...!"
+    "You stand outside the main hall where the reunion was happening. You can hear the music blasting, as well as lively chatter from your other batchmates inside."
 
-    "Sorry but we'll need more time to cook up the rest of the game!"
+    "It almost makes you want to turn back and leave."
 
-    "For now, have a shot at our very rudimentary minigame :]"
+    "Maybe coming here was a mistake, what were you thinking?"
+
+    "Maybe you’re just afraid to face the people you went to college with and see that they’re living better lives than you."
+
+    "As you feel the urge to leave getting stronger, you see someone exit the building."
+
+    "It was Stacy and she looked... upset."
+
+    "The moment she saw you, her eyes lit up."
+
+    show stacy happy with dissolve
+    s "[name], you made it...!"
 
 
 label seq7:
