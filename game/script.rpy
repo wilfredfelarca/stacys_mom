@@ -309,6 +309,7 @@ label seq3:
 
     "The moment she saw you, her eyes lit up."
 
+    show bg schoolpark_sunset_blur
     show stacy happy with dissolve
     s "[name], you made it...!"
 
@@ -331,13 +332,15 @@ label seq3:
 
     s "I saw my ex, and he’s married to the girl he cheated on me with..."
 
-    hide stacy
+    show bg schoolpark_sunset
+    hide stacy with dissolve
     "Before you could offer to take her someplace else, you see a luxurious sports car pull up towards you both."
 
     "Inside the car, you see none other than Stacy’s mom herself."
 
     "{b}And she {i}still{/i} has it going on...!{/b}"
 
+    show bg schoolpark_sunset_blur
     show mom sad with dissolve
     m "I got your text, are you okay sweetie...?"
 
@@ -350,8 +353,8 @@ label seq3:
 
     "You felt your ears getting red as you scrambled for your words, and it just made Stacy and her mom giggle."
 
-    show stacy happy at midleft with dissolve
     show mom happy at midright with dissolve
+    show stacy happy at midleft with dissolve
     s "Wanna get out of here?"
 
     "You find yourself nodding at the offer, and you almost feel embarrassed at how eager you are." with vpunch
@@ -363,7 +366,93 @@ label seq3:
     jump seq4
 
 label seq4:
-    ""
+    scene bg diner with dissolve
+    "It was 6:43 pm, and in a diner, you sat with both Stacy and her mother."
+
+    "This was the last thing you expected to do on a random Saturday evening. But here you were, sitting awkwardly, and across from you was your old college classmate and her hot mom."
+
+    "As if things couldn’t get more awkward, Stacy suddenly had to step out for a moment because of a work call."
+
+    show bg diner_blur with dissolve
+    show mom neutral with dissolve
+    "So now it was just you and her mom. The same mom you had a thing for back when you were 20."
+
+    m "So... how's work?"
+
+    p "It's alright, Ms. Collins-"
+
+    show mom wink with dissolve
+    m "Please, just call me Debbie. All these years had passed, and you still call me Ms. Collins."
+
+    "She teased you about it, because it was true. Even back then, she asked you to call her Debbie, but you just stuck to calling her \"Ms. Collins\" or \"ma’am\"."
+
+    "You didn’t think it would be appropriate to be on a first-name basis with your friend’s mom."
+
+    p "I shouldn’t-\nIt doesn’t feel right to call you by that, ma’am..."
+    
+    show mom neutral with dissolve
+    m "Please, I insist. You make me feel {i}older{/i} when you use those terms."
+
+    menu:
+        "Keep your mouth shut":
+            "You sit there awkwardly, waiting for Stacy to come back."
+            
+            "Because in all honesty? You wanted to get out of this situation."
+
+            "It was getting awkward quick, and you didn’t know what to do or say in front of Stacy’s mom."
+
+        "Compliment her":
+            $ momLove += 1
+            $ renpy.notify("Stacy's mom bond up!")
+            p "There's nothing wrong with being older..."
+
+            p "Besides, you look {i}amazing{/i} for your age, ma’am."
+
+            show mom happy with dissolve
+            "Stacy's mom beams as she fiddled with a piece of her hair."
+
+            m "You really think so, sweetie?"
+
+            m "If I didn’t know you, I’d think you were flirting with me."
+
+    hide mom with dissolve
+    "You felt your face go hot as you avoided eye contact with Stacy's mom."
+
+    "The menu has never looked more interesting than now."
+
+    show stacy neutral at midleft with dissolve
+    show mom neutral at midright with dissolve
+    "Eventually, Stacy returned from her phone call, sitting back down whilst noticing the awkward air between you and her mother."
+
+    s "So, [name], Robert told me you worked at Nexus Corp. How is it?"
+
+    "Ah yes, Nexus Corp. How else could you describe it? It’s like every other tech company out there."
+
+    "Working for a corporation isn’t really fun, but at least it’s steady, and you live a comfortable life because of it."
+
+    p "Eh, you know... typical corporate stuff. It’s alright... Keeps things steady for me at least."
+
+    show stacy sad at midleft with dissolve
+    s "I feel you... My previous job was like that. That's why I moved."
+
+    show mom happy at midright with dissolve
+    m "You both make me feel young. It reminds me of the time I used to work in a law firm."
+
+    show stacy neutral at midleft with dissolve
+    s "You were always so busy, but you always made time for me. Thanks for that, mom."
+
+    "Stacy’s mom was admirable. You remember when you’d visit her back then. Her mom was a hard worker, yet she always had time for Stacy."
+
+    "You couldn’t imagine how hard it was. Being a single mother was no joke, but Stacy’s mom made it look so effortless. You had to give her credit for that, at least."
+    
+    scene black with dissolve
+    jump seq5
+
+label seq5:
+    "(sequence 5 wip)"
+
+label seq6:
+    "(sequence 6 wip)"
 
 label seq7:
 
