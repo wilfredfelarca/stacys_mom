@@ -181,7 +181,7 @@ label seq2:
 
     "She was in her late 30s, or maybe even early 40s, and she looked great for her age. You remember your eyes almost popping out of their sockets from how wide they went."
     
-    show mom talk_c at chrCenter
+    show mom talk_c at chrCenter with dissolve
     m "Oh! You must be [name]! Stacy told me all about you, it’s so good to finally meet you, dear!"
 
     "Stacy told her mom about you...? But why? It’s not like you were best friends or anything."
@@ -192,10 +192,12 @@ label seq2:
 
     "{i}Stacy’s mom has got it going on.{/i}"
 
+    show mom talk_a at chrCenter with dissolve
     m "Come in! It’s sooooo hot out today."
 
     m "My daughter’s in the backyard, probably already taking a dip in the new pool."
 
+    show mom happy_c at chrCenter with dissolve
     m "Why don’t you join her? I’ll make you kids some lemonade and snacks to eat."
 
     "As if on instinct, you obeyed the older woman and found yourself walking towards the backyard of their house."
@@ -209,7 +211,7 @@ label seq2:
     "And her mom was right, she was already taking a dip in the pool. She looked so carefree, it made you want to join her in the water."
 
     show bg garden_blur with dissolve
-    show stacy swimsuit with dissolve
+    show stacy sw_c at chrCenter with dissolve
     s "Hey! You made it."
 
     s "The water's nice, come have a dip!"
@@ -222,17 +224,19 @@ label seq2:
 
     "You asked, gesturing behind you. You felt pathetic as your voice cracked while doing so."
 
+    show stacy sw_b at chrCenter with dissolve
     s "Yeah, don’t mind her. She’s a bit much. It’s why I don’t really bring friends over."
 
     p "Eh... It’s fine..."
 
     p "She’s very... {i}welcoming{/i}, that’s for sure..."
 
+    show stacy sw_a at chrCenter with dissolve
     s "You okay...? You look a bit red."
 
     "Feeling embarrassed, you didn’t think twice about what you were doing and-"
 
-    hide stacy
+    hide stacy with dissolve
     "{size=70}SPLASH...!{/size}" with vpunch
 
     "You jumped in the pool with no hesitation, trying to cool yourself off. You didn’t want Stacy to think you were blushing or {i}something{/i}..."
@@ -247,12 +251,14 @@ label seq2:
 
     "Stacy’s mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
 
-    show stacy swimsuit at midleft with dissolve
-    show mom swimsuit at midright with dissolve
+    show stacy sw_a at midleft with dissolve
+    show mom sw_c at midright with dissolve
     "{i}She was in her bathing suit.{/i}"
 
     "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone’s ankles for the first time."
 
+    hide stacy with dissolve
+    hide mom with dissolve
     "Before you knew it, you felt your vision fading as you blacked out while still in the pool."
 
     s "{b}[name]!!!{/b}" with vpunch
@@ -320,7 +326,7 @@ label seq3:
     "The moment she saw you, her eyes lit up."
 
     show bg schoolpark_sunset_blur
-    show stacy happy with dissolve
+    show stacy neutral_b at chrCenter with dissolve
     s "[name], you made it...!"
 
     "There you stood, face-to-face with someone you haven’t seen in a decade. You couldn’t help but feel the nostalgia kicking in."
@@ -329,9 +335,10 @@ label seq3:
 
     "You look at Stacy, and you can’t help but notice that she looks more like her mom now that she’s grown older."
 
-    "She goes in for a hug, and you freeze on the spot, not knowing what to do."
+    hide stacy with dissolve
+    "She goes in for a hug, and you freeze on the spot, not knowing what to do." with hpunch
 
-    show stacy sad with dissolve
+    show stacy sad_c at chrCenter with dissolve
     s "This reunion sucks... Do you want to get out of here?"
 
     "She murmurs as she clings to you. You don’t know what happened at the reunion, but all the more reason to get out of here."
@@ -340,7 +347,8 @@ label seq3:
 
     p "Hey, what happened in there?"
 
-    s "I saw my ex, and he’s married to the girl he cheated on me with..."
+    show stacy sad_b at chrCenter with dissolve
+    s "My ex came up to me, and he’s married to the girl he cheated on me with..."
 
     show bg schoolpark_sunset
     hide stacy with dissolve
@@ -351,20 +359,20 @@ label seq3:
     "{b}And she {i}still{/i} has it going on...!{/b}"
 
     show bg schoolpark_sunset_blur
-    show mom sad with dissolve
+    show mom sad_c at chrCenter with dissolve
     m "I got your text, are you okay sweetie...?"
 
     "You didn’t think it was possible, but Stacy’s mom got even hotter. She was probably in her early 50’s by now, and she looked {i}great{/i}."
 
-    show mom surprise with dissolve
+    show mom talk_e at chrCenter with dissolve
     "When she noticed you, she lowered her sunglasses and looked you up and down with a mix of curiosity and surprise in her eyes."
 
     m "[name]... is that you?"
 
     "You felt your ears getting red as you scrambled for your words, and it just made Stacy and her mom giggle."
 
-    show mom happy at midright with dissolve
-    show stacy happy at midleft with dissolve
+    show mom talk_e at midright with dissolve
+    show stacy neutral_a at midleft with dissolve
     s "Wanna get out of here?"
 
     "You find yourself nodding at the offer, and you almost feel embarrassed at how eager you are." with vpunch
