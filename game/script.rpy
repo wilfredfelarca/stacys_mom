@@ -13,18 +13,27 @@ define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 
 # Transforms for various uses such as tweening the characters or scenes.
+
 #transform sepia:
     #matrixcolor TintMatrix("#d7be89")
 
+# A new "center" transform specifically for character sprites
+transform chrCenter:
+    zoom 0.5
+    xcenter 0.5
+    yalign 0.3
+
 # Center the sprite 25% across the screen
 transform midleft:
-    yalign 1.0
+    zoom 0.5
     xcenter 0.25
+    yalign 0.3
 
 # Center the sprite 75% across the screen
 transform midright:
-    yalign 1.0
+    zoom 0.5
     xcenter 0.75
+    yalign 0.3
 
 # The game starts here.
 
@@ -166,19 +175,13 @@ label seq2:
 
     "Without thinking much about it, you headed over to chill with Stacy at her new pool."
 
-    show momhappy_c with dissolve:
-        zoom 0.5
-        xalign 0.5
-        yalign 0.3
     show bg house_outside_blur with dissolve
+    show mom happy_c at chrCenter with dissolve
     "What greeted you at the door was a stunning older woman who resembled Stacy a lot."
 
     "She was in her late 30s, or maybe even early 40s, and she looked great for her age. You remember your eyes almost popping out of their sockets from how wide they went."
-    hide momhappy_c
-    show momtalking_c:
-        zoom 0.5
-        xalign 0.5
-        yalign 0.3
+    
+    show mom talk_c at chrCenter
     m "Oh! You must be [name]! Stacy told me all about you, it’s so good to finally meet you, dear!"
 
     "Stacy told her mom about you...? But why? It’s not like you were best friends or anything."
