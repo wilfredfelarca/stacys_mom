@@ -35,6 +35,11 @@ transform midright:
     xcenter 0.75
     yalign 0.3
 
+init:
+    # Edits the length of a transition
+    $ wipeup = CropMove(0.1, "wipeup")
+    $ wipeleft = CropMove(0.25, "wipeleft")
+
 # The game starts here.
 
 label start:
@@ -69,11 +74,14 @@ label start:
     if name == "":
         $ name= _("Bepis")
     
+    scene bg apartment_night with dissolve:
+        zoom 1.2
+        xcenter 0.5
     "Another tiring day of being a corporate slave. A nice can of cold beer sounds amazing to you right now. And maybe even some greasy fried food that could clog one’s arteries."
 
     "Just as you were about to plop down on the couch, you felt a vibration in your pocket."
 
-    "{i}(BZZT BZZT){/i}"
+    "{i}(BZZT BZZT){/i}" with hpunch
 
     p "God please, anything but work-related matters... I CLOCKED OUT, OKAY? I just want to enjoy my beer, and watch my favorite show..."
 
@@ -134,6 +142,7 @@ label seq1End: ## LONELY ENDING
 
     "{i}Especially{/i} not after you found her mom hot."
 
+    scene black with dissolve
     "You lean back in your seat and turn your show back on."
 
     # play music "audio/bestInJest.mp3" fadein 1.0 volume 0.1
@@ -159,13 +168,12 @@ label seq1b:
 
     "Luckily, it didn’t seem weird at the time considering you were neighbors."
 
+    scene black with dissolve
     "Her mom always welcomed you with open arms, {i}literally{/i}. She’d greet you with the warmest, tightest hugs, to the point that they made your head woozy."
 
     jump seq2
 
 label seq2:
-    scene black
-
     "You remember the first time you met Stacy’s mom."
 
     scene bg house_outside with dissolve
@@ -236,7 +244,7 @@ label seq2:
 
     "Feeling embarrassed, you didn’t think twice about what you were doing and-"
 
-    hide stacy with dissolve
+    scene bg underwater with wipeup
     "{size=70}SPLASH...!{/size}" with vpunch
 
     "You jumped in the pool with no hesitation, trying to cool yourself off. You didn’t want Stacy to think you were blushing or {i}something{/i}..."
@@ -251,24 +259,27 @@ label seq2:
 
     "Stacy’s mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
 
+    scene bg garden_blur with dissolve
     show stacy sw_a at midleft with dissolve
     show mom sw_c at midright with dissolve
     "{i}She was in her bathing suit.{/i}"
 
     "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone’s ankles for the first time."
 
-    hide stacy with dissolve
-    hide mom with dissolve
+    scene bg underwater with dissolve
     "Before you knew it, you felt your vision fading as you blacked out while still in the pool."
 
     s "{b}[name]!!!{/b}" with vpunch
 
-    scene black
+    scene black with dissolve
     jump seq3
 
 label seq3:
     "..."
 
+    scene bg apartment with dissolve:
+        zoom 1.2
+        xcenter 0.5
     "The day of the reunion, you put your best outfit on. You didn’t want to show up to this reunion looking like a bum, so might as well dress up."
 
     "As you got ready, you heard your phone buzz."
@@ -277,7 +288,7 @@ label seq3:
 
     "It was Stacy."
 
-    s "Hi! What time are you arriving for the reunion?"
+    s "{i}Hi! What time are you arriving for the reunion?{/i}"
 
     menu:
         "Reply":
@@ -302,9 +313,10 @@ label seq3:
 
     "It was now 5:01 pm, and thankfully your old college was relatively close to your place. Give or take 15 minutes without traffic and 20-something minutes with."
 
+    scene black with wipeleft
     "..."
 
-    scene bg schoolpark_sunset
+    scene bg schoolpark_sunset with wipeleft
     "Here you are again..."
 
     "{b}{i}Saint Ander Dingus’ Institute of Learning.{/i}{/b}"
@@ -325,7 +337,7 @@ label seq3:
 
     "The moment she saw you, her eyes lit up."
 
-    show bg schoolpark_sunset_blur
+    show bg schoolpark_sunset_blur with dissolve
     show stacy neutral_b at chrCenter with dissolve
     s "[name], you made it...!"
 
