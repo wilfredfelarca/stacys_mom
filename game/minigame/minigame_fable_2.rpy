@@ -12,9 +12,16 @@ init:
 screen fable_2_minigame:
     add "minigame/Fable_bar.png" align(0.5,0.5)
     add "minigame/Fable_point.png" at fable_point_move(fable_minigame_bar)
-    text "[fable_minigame_score]/[fable_score_goal]\nNumber of clicks" align(0.5,0.1)
-    text "[fable_minigame_bar]\nThe meaning of the bar" align(0.5,0.2) #COMMENT THIS OUT IN THE FINAL BUILD
-    text "[fable_you_press_button]" align(0.5,0.3)
+    text "[fable_minigame_score]/[fable_score_goal]\nNumber of clicks":
+        xalign 0.5
+        yalign 0.1
+        text_align 0.5
+    #text "[fable_minigame_bar]\nThe meaning of the bar" align(0.5,0.2) #COMMENT THIS OUT IN THE FINAL BUILD
+    text "Press SPACE on the green!":
+        xalign 0.5
+        yalign 0.3
+        text_align 0.5
+    #text "[fable_you_press_button]" align(0.5,0.3)
 
     if fable_minigame_bar >= -14 and fable_minigame_bar <= 14:
         key "K_SPACE":
@@ -38,7 +45,8 @@ screen you_press_button_good:
     timer 1.0 action Hide("you_press_button_good")
 screen you_press_button_bad:
     #hbox at fable_move_bad:
-    text "{color=#950000}Oops...\nTry Again.{/color}" at fable_move_bad
+    text "{color=#950000}Oops...\nTry Again.{/color}" at fable_move_bad:
+        text_align 0.5
     timer 1.0 action Hide("you_press_button_bad")
 transform fable_move_good:
     align(0.5,0.5)

@@ -8,7 +8,7 @@ default stacyLove = 0
 default momLove = 0
 
 
-define p = Character(_("[name]"), color="#dbce8e")
+define p = Character(_("[name]"), color="#9a9370")
 define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 
@@ -59,11 +59,11 @@ label start:
 
     # These display lines of dialogue.
 
-    "The summer of '03... The summer that changed your life forever. You thought you’d grown past it, knowing it’s been ages."
+    "The summer of '03... The summer that changed your life forever. You thought you'd grown past it, knowing it's been ages."
 
-    "Like, c’mon, it’s been ten years. You are a grown ass person with bills to pay, and an empty home waiting for you."
+    "Like, c'mon, it's been ten years. You are a grown ass person with bills to pay, and an empty home waiting for you."
 
-    "It’s been hard, but you’ve surprisingly managed. You’re getting paid, and living a comfortable life."
+    "It's been hard, but you've surprisingly managed. You're getting paid, and living a comfortable life."
 
     "What more could you ask for? Right...?"
 
@@ -77,7 +77,7 @@ label start:
     scene bg apartment_night with dissolve:
         zoom 1.2
         xcenter 0.5
-    "Another tiring day of being a corporate slave. A nice can of cold beer sounds amazing to you right now. And maybe even some greasy fried food that could clog one’s arteries."
+    "Another tiring day of being a corporate slave. A nice can of cold beer sounds amazing to you right now. And maybe even some greasy fried food that could clog one's arteries."
 
     "Just as you were about to plop down on the couch, you felt a vibration in your pocket."
 
@@ -87,11 +87,11 @@ label start:
 
     "With a sigh, you pull your phone out. An email."
 
-    "Great, just great. It’s probably your workplace asking you to do more work despite clocking out already."
+    "Great, just great. It's probably your workplace asking you to do more work despite clocking out already."
 
     "As you opened the email, what greeted you was something you least expected."
 
-    '{i}\"Saint Ander Dingus’ Institute of Learning invites former alumni of batch 2003 to celebrate a reunion after 10 years!\"{/i}'
+    '{i}\"Saint Ander Dingus\' Institute of Learning invites former alumni of batch 2003 to celebrate a reunion after 10 years!\"{/i}'
 
     "With a snort, you toss your phone somewhere on the couch and lean back in your seat."
 
@@ -107,7 +107,7 @@ label start:
 
     "Oh, how {i}wrong{/i} you were."
 
-    "Instead, what greets you is a text with a name you haven’t thought about in years."
+    "Instead, what greets you is a text with a name you haven't thought about in years."
 
     "{b}Stacy Collins{/b}"
 
@@ -116,14 +116,14 @@ label start:
     jump seq1a
 
 label seq1a:
-    "{i}\"Hi! Just checking, is this [name]’s number?\"{/i}"
+    "{i}\"Hi! Just checking, is this [name]'s number?\"{/i}"
 
-    "{i}\"It’s Stacy! Stacy Collins. I know we haven’t seen each other in a decade, but I was wondering...\"{/i}"
+    "{i}\"It's Stacy! Stacy Collins. I know we haven't seen each other in a decade, but I was wondering...\"{/i}"
 
     "{i}\"Are you attending the reunion?\"{/i}"
 
     "As you finish reading the text, you choke on your beer.\n
-    Stacy Collins... You haven’t heard that name in years."
+    Stacy Collins... You haven't heard that name in years."
 
     "How the {i}fuck{/i} did she get your number?"
 
@@ -136,9 +136,9 @@ label seq1a:
 
 label seq1End: ## LONELY ENDING
 
-    "You decide it wasn’t worth your time, and leave the text on read."
+    "You decide it wasn't worth your time, and leave the text on read."
 
-    "It’s not worth wasting your time mingling with people you don’t even like. Stacy? She’s better left in the past."
+    "It's not worth wasting your time mingling with people you don't even like. Stacy? She's better left in the past."
 
     "{i}Especially{/i} not after you found her mom hot."
 
@@ -158,7 +158,7 @@ label seq1b:
 
     s "{i}I asked him for your number because I wanted to catch up with you!{/i}"
 
-    s "{i}It’s been 10 years after all. And with the reunion coming up, I thought it gave me a perfect chance to reach out!{/i}"
+    s "{i}It's been 10 years after all. And with the reunion coming up, I thought it gave me a perfect chance to reach out!{/i}"
 
     "If you were being completely honest, it feels awkward to reconnect with Stacy."
 
@@ -166,15 +166,15 @@ label seq1b:
 
     "You even made excuses to visit her home to \"hangout\", all because you wanted a glimpse of her mother. {i}You sick bastard...{/i}"
 
-    "Luckily, it didn’t seem weird at the time considering you were neighbors."
+    "Luckily, it didn't seem weird at the time considering you were neighbors."
 
     scene black with dissolve
-    "Her mom always welcomed you with open arms, {i}literally{/i}. She’d greet you with the warmest, tightest hugs, to the point that they made your head woozy."
+    "Her mom always welcomed you with open arms, {i}literally{/i}. She'd greet you with the warmest, tightest hugs, to the point that they made your head woozy."
 
     jump seq2
 
 label seq2:
-    "You remember the first time you met Stacy’s mom."
+    "You remember the first time you met Stacy's mom."
 
     scene bg house_outside with dissolve
     #show layer master at sepia
@@ -190,23 +190,25 @@ label seq2:
     "She was in her late 30s, or maybe even early 40s, and she looked great for her age. You remember your eyes almost popping out of their sockets from how wide they went."
     
     show mom talk_c at chrCenter with dissolve
-    m "Oh! You must be [name]! Stacy told me all about you, it’s so good to finally meet you, dear!"
+    m "Oh! You must be [name]! Stacy told me all about you, it's so good to finally meet you, dear!"
 
-    "Stacy told her mom about you...? But why? It’s not like you were best friends or anything."
+    "Stacy told her mom about you...? But why? It's not like you were best friends or anything."
 
-    "Yeah, you both hung out from time to time, but it was more of a casual \"Hey wanna eat lunch together?\" or \"Wanna partner up for this project?\" type of friendship since you both didn’t really talk to many people."
+    "Yeah, sure, you both hung out from time to time..."
+    
+    "But it was more of a casual \"Hey wanna eat lunch together?\" or \"Wanna partner up for this project?\" type of friendship since you both didn't really talk to many people."
 
-    "After meeting her mother, it’s safe to say that..."
+    "After meeting her mother, it's safe to say that..."
 
-    "{i}Stacy’s mom has got it going on.{/i}"
+    "{i}Stacy's mom has got it going on.{/i}"
 
     show mom talk_a at chrCenter with dissolve
-    m "Come in! It’s sooooo hot out today."
+    m "Come in! It's sooooo hot out today."
 
-    m "My daughter’s in the backyard, probably already taking a dip in the new pool."
+    m "My daughter's in the backyard, probably already taking a dip in the new pool."
 
     show mom happy_c at chrCenter with dissolve
-    m "Why don’t you join her? I’ll make you kids some lemonade and snacks to eat."
+    m "Why don't you join her? I'll make you kids some lemonade and snacks to eat."
 
     "As if on instinct, you obeyed the older woman and found yourself walking towards the backyard of their house."
 
@@ -224,47 +226,47 @@ label seq2:
 
     s "The water's nice, come have a dip!"
 
-    "As she got out of the pool, you couldn’t help but stare a little."
+    "As she got out of the pool, you couldn't help but stare a little."
 
-    "She looked... {i}pretty{/i}. But your mind was so distracted by seeing her mom, so you didn’t even spare her another glance."
+    "She looked... {i}pretty{/i}. But your mind was so distracted by seeing her mom, so you didn't even spare her another glance."
 
     p "Was that your mom...?"
 
     "You asked, gesturing behind you. You felt pathetic as your voice cracked while doing so."
 
     show stacy sw_b at chrCenter with dissolve
-    s "Yeah, don’t mind her. She’s a bit much. It’s why I don’t really bring friends over."
+    s "Yeah, don't mind her. She's a bit much. It's why I don't really bring friends over."
 
-    p "Eh... It’s fine..."
+    p "Eh... It's fine..."
 
-    p "She’s very... {i}welcoming{/i}, that’s for sure..."
+    p "She's very... {i}welcoming{/i}, that's for sure..."
 
     show stacy sw_a at chrCenter with dissolve
     s "You okay...? You look a bit red."
 
-    "Feeling embarrassed, you didn’t think twice about what you were doing and-"
+    "Feeling embarrassed, you didn't think twice about what you were doing and-"
 
     scene bg underwater with wipeup
     "{size=70}SPLASH...!{/size}" with vpunch
 
-    "You jumped in the pool with no hesitation, trying to cool yourself off. You didn’t want Stacy to think you were blushing or {i}something{/i}..."
+    "You jumped in the pool with no hesitation, trying to cool yourself off. You didn't want Stacy to think you were blushing or {i}something{/i}..."
 
-    "That would’ve been embarrassing. You? Blushing over her {i}mom{/i}?"
+    "That would've been embarrassing. You? Blushing over her {i}mom{/i}?"
 
     "You'd rather {i}drown{/i} in this pool than her finding out."
 
     m "I made snaaacks!~"
 
-    "As you looked over at Stacy’s mom, you felt your head getting hazy again."
+    "As you looked over at Stacy's mom, you felt your head getting hazy again."
 
-    "Stacy’s mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
+    "Stacy's mom stood holding a tray of lemonade and snacks, but she changed out of her clothes."
 
     scene bg garden_blur with dissolve
     show stacy sw_a at midleft with dissolve
     show mom sw_c at midright with dissolve
     "{i}She was in her bathing suit.{/i}"
 
-    "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone’s ankles for the first time."
+    "It was nothing crazy; it was rather modest. But you felt yourself withering away like a Victorian man seeing someone's ankles for the first time."
 
     scene bg underwater with dissolve
     "Before you knew it, you felt your vision fading as you blacked out while still in the pool."
@@ -280,7 +282,7 @@ label seq3:
     scene bg apartment with dissolve:
         zoom 1.2
         xcenter 0.5
-    "The day of the reunion, you put your best outfit on. You didn’t want to show up to this reunion looking like a bum, so might as well dress up."
+    "The day of the reunion, you put your best outfit on. You didn't want to show up to this reunion looking like a bum, so might as well dress up."
 
     "As you got ready, you heard your phone buzz."
 
@@ -298,7 +300,7 @@ label seq3:
 
             p "{i}what about you?{/i}"
 
-            s "{i}I’ll arrive at around the same time as you then! I don’t really know who I’d hang around with if I arrived before you lol.{/i}"
+            s "{i}I'll arrive at around the same time as you then! I don't really know who I'd hang around with if I arrived before you lol.{/i}"
 
             p "{i}alrightyy, ill see u later then?{/i}"
 
@@ -309,7 +311,7 @@ label seq3:
 
     "By the time you finished getting ready, you took one last glance at the mirror."
 
-    "That’s good enough... You at least look put together."
+    "That's good enough... You at least look put together."
 
     "It was now 5:01 pm, and thankfully your old college was relatively close to your place. Give or take 15 minutes without traffic and 20-something minutes with."
 
@@ -319,9 +321,9 @@ label seq3:
     scene bg schoolpark_sunset with wipeleft
     "Here you are again..."
 
-    "{b}{i}Saint Ander Dingus’ Institute of Learning.{/i}{/b}"
+    "{b}{i}Saint Ander Dingus' Institute of Learning.{/i}{/b}"
 
-    "It was almost 6 pm by the time you arrived. You hadn’t anticipated traffic to hold you off that much, but at least you made it."
+    "It was almost 6 pm by the time you arrived. You hadn't anticipated traffic to hold you off that much, but at least you made it."
 
     "You stand outside the main hall where the reunion was happening. You can hear the music blasting, as well as lively chatter from your other batchmates inside."
 
@@ -329,7 +331,7 @@ label seq3:
 
     "Maybe coming here was a mistake, what were you thinking?"
 
-    "Maybe you’re just afraid to face the people you went to college with and see that they’re living better lives than you."
+    "Maybe you're just afraid to face the people you went to college with and see that they're living better lives than you."
 
     "As you feel the urge to leave getting stronger, you see someone exit the building."
 
@@ -341,11 +343,11 @@ label seq3:
     show stacy neutral_b at chrCenter with dissolve
     s "[name], you made it...!"
 
-    "There you stood, face-to-face with someone you haven’t seen in a decade. You couldn’t help but feel the nostalgia kicking in."
+    "There you stood, face-to-face with someone you haven't seen in a decade. You couldn't help but feel the nostalgia kicking in."
 
-    "It’s like being back in college, except this time you’re both grown-ups now."
+    "It's like being back in college, except this time you're both grown-ups now."
 
-    "You look at Stacy, and you can’t help but notice that she looks more like her mom now that she’s grown older."
+    "You look at Stacy, and you can't help but notice that she looks more like her mom now that she's grown older."
 
     hide stacy with dissolve
     "She goes in for a hug, and you freeze on the spot, not knowing what to do." with hpunch
@@ -353,20 +355,20 @@ label seq3:
     show stacy sad_c at chrCenter with dissolve
     s "This reunion sucks... Do you want to get out of here?"
 
-    "She murmurs as she clings to you. You don’t know what happened at the reunion, but all the more reason to get out of here."
+    "She murmurs as she clings to you. You don't know what happened at the reunion, but all the more reason to get out of here."
 
     "Right...?"
 
     p "Hey, what happened in there?"
 
     show stacy sad_b at chrCenter with dissolve
-    s "My ex came up to me, and he’s married to the girl he cheated on me with..."
+    s "My ex came up to me, and he's married to the girl he cheated on me with..."
 
     show bg schoolpark_sunset
     hide stacy with dissolve
     "Before you could offer to take her someplace else, you see a luxurious sports car pull up towards you both."
 
-    "Inside the car, you see none other than Stacy’s mom herself."
+    "Inside the car, you see none other than Stacy's mom herself."
 
     "{b}And she {i}still{/i} has it going on...!{/b}"
 
@@ -374,7 +376,7 @@ label seq3:
     show mom sad_c at chrCenter with dissolve
     m "I got your text, are you okay sweetie...?"
 
-    "You didn’t think it was possible, but Stacy’s mom got even hotter. She was probably in her early 50’s by now, and she looked {i}great{/i}."
+    "You didn't think it was possible, but Stacy's mom got even hotter. She was probably in her early 50's by now, and she looked {i}great{/i}."
 
     show mom talk_e at chrCenter with dissolve
     "When she noticed you, she lowered her sunglasses and looked you up and down with a mix of curiosity and surprise in her eyes."
@@ -389,7 +391,7 @@ label seq3:
 
     "You find yourself nodding at the offer, and you almost feel embarrassed at how eager you are." with vpunch
 
-    "But to be honest? You’d rather catch up with these two gorgeous ladies than having to sit through a reunion where everybody pretends to like each other."
+    "But to be honest? You'd rather catch up with these two gorgeous ladies than having to sit through a reunion where everybody pretends to like each other."
 
     "When in reality, they probably used this reunion as an excuse to show off and feel better about themselves."
     scene black with dissolve
@@ -401,7 +403,7 @@ label seq4:
 
     "This was the last thing you expected to do on a random Saturday evening. But here you were, sitting awkwardly, and across from you was your old college classmate and her hot mom."
 
-    "As if things couldn’t get more awkward, Stacy suddenly had to step out for a moment because of a work call."
+    "As if things couldn't get more awkward, Stacy suddenly had to step out for a moment because of a work call."
 
     show bg diner_blur with dissolve
     show mom neutral with dissolve
@@ -414,11 +416,11 @@ label seq4:
     show mom wink with dissolve
     m "Please, just call me Debbie. All these years had passed, and you still call me Ms. Collins."
 
-    "She teased you about it, because it was true. Even back then, she asked you to call her Debbie, but you just stuck to calling her \"Ms. Collins\" or \"ma’am\"."
+    "She teased you about it, because it was true. Even back then, she asked you to call her Debbie, but you just stuck to calling her \"Ms. Collins\" or \"ma'am\"."
 
-    "You didn’t think it would be appropriate to be on a first-name basis with your friend’s mom."
+    "You didn't think it would be appropriate to be on a first-name basis with your friend's mom."
 
-    p "I shouldn’t-\nIt doesn’t feel right to call you by that, ma’am..."
+    p "I shouldn't-\nIt doesn't feel right to call you by that, ma'am..."
     
     show mom neutral with dissolve
     m "Please, I insist. You make me feel {i}older{/i} when you use those terms."
@@ -429,21 +431,21 @@ label seq4:
             
             "Because in all honesty? You wanted to get out of this situation."
 
-            "It was getting awkward quick, and you didn’t know what to do or say in front of Stacy’s mom."
+            "It was getting awkward quick, and you didn't know what to do or say in front of Stacy's mom."
 
         "Compliment her":
             $ momLove += 1
             $ renpy.notify("Stacy's mom bond up!")
             p "There's nothing wrong with being older..."
 
-            p "Besides, you look {i}amazing{/i} for your age, ma’am."
+            p "Besides, you look {i}amazing{/i} for your age, ma'am."
 
             show mom happy with dissolve
             "Stacy's mom beams as she fiddled with a piece of her hair."
 
             m "You really think so, sweetie?"
 
-            m "If I didn’t know you, I’d think you were flirting with me."
+            m "If I didn't know you, I'd think you were flirting with me."
 
     hide mom with dissolve
     "You felt your face go hot as you avoided eye contact with Stacy's mom."
@@ -456,11 +458,11 @@ label seq4:
 
     s "So, [name], Robert told me you worked at Nexus Corp. How is it?"
 
-    "Ah yes, Nexus Corp. How else could you describe it? It’s like every other tech company out there."
+    "Ah yes, Nexus Corp. How else could you describe it? It's like every other tech company out there."
 
-    "Working for a corporation isn’t really fun, but at least it’s steady, and you live a comfortable life because of it."
+    "Working for a corporation isn't really fun, but at least it's steady, and you live a comfortable life because of it."
 
-    p "Eh, you know... typical corporate stuff. It’s alright... Keeps things steady for me at least."
+    p "Eh, you know... typical corporate stuff. It's alright... Keeps things steady for me at least."
 
     show stacy sad at midleft with dissolve
     s "I feel you... My previous job was like that. That's why I moved."
@@ -471,9 +473,9 @@ label seq4:
     show stacy neutral at midleft with dissolve
     s "You were always so busy, but you always made time for me. Thanks for that, mom."
 
-    "Stacy’s mom was admirable. You remember when you’d visit her back then. Her mom was a hard worker, yet she always had time for Stacy."
+    "Stacy's mom was admirable. You remember when you'd visit her back then. Her mom was a hard worker, yet she always had time for Stacy."
 
-    "You couldn’t imagine how hard it was. Being a single mother was no joke, but Stacy’s mom made it look so effortless. You had to give her credit for that, at least."
+    "You couldn't imagine how hard it was. Being a single mother was no joke, but Stacy's mom made it look so effortless. You had to give her credit for that, at least."
     
     scene black with dissolve
     jump seq5
