@@ -406,14 +406,14 @@ label seq4:
     "As if things couldn't get more awkward, Stacy suddenly had to step out for a moment because of a work call."
 
     show bg diner_blur with dissolve
-    show mom neutral with dissolve
     "So now it was just you and her mom. The same mom you had a thing for back when you were 20."
 
+    show mom talk_a at chrCenter with dissolve
     m "So... how's work?"
 
     p "It's alright, Ms. Collins-"
 
-    show mom wink with dissolve
+    show mom wink at chrCenter with dissolve
     m "Please, just call me Debbie. All these years had passed, and you still call me Ms. Collins."
 
     "She teased you about it, because it was true. Even back then, she asked you to call her Debbie, but you just stuck to calling her \"Ms. Collins\" or \"ma'am\"."
@@ -422,7 +422,7 @@ label seq4:
 
     p "I shouldn't-\nIt doesn't feel right to call you by that, ma'am..."
     
-    show mom neutral with dissolve
+    show mom wink_talk at chrCenter with dissolve
     m "Please, I insist. You make me feel {i}older{/i} when you use those terms."
 
     menu:
@@ -440,9 +440,10 @@ label seq4:
 
             p "Besides, you look {i}amazing{/i} for your age, ma'am."
 
-            show mom happy with dissolve
+            show mom happy_c with dissolve
             "Stacy's mom beams as she fiddled with a piece of her hair."
 
+            
             m "You really think so, sweetie?"
 
             m "If I didn't know you, I'd think you were flirting with me."
@@ -452,10 +453,10 @@ label seq4:
 
     "The menu has never looked more interesting than now."
 
-    show stacy neutral at midleft with dissolve
-    show mom neutral at midright with dissolve
     "Eventually, Stacy returned from her phone call, sitting back down whilst noticing the awkward air between you and her mother."
 
+    show mom talk_d at midright with dissolve
+    show stacy neutral_c at midleft with dissolve
     s "So, [name], Robert told me you worked at Nexus Corp. How is it?"
 
     "Ah yes, Nexus Corp. How else could you describe it? It's like every other tech company out there."
@@ -464,13 +465,13 @@ label seq4:
 
     p "Eh, you know... typical corporate stuff. It's alright... Keeps things steady for me at least."
 
-    show stacy sad at midleft with dissolve
+    show stacy sad_c at midleft with dissolve
     s "I feel you... My previous job was like that. That's why I moved."
 
-    show mom happy at midright with dissolve
+    show mom happy_c at midright with dissolve
     m "You both make me feel young. It reminds me of the time I used to work in a law firm."
 
-    show stacy neutral at midleft with dissolve
+    show stacy neutral_c at midleft with dissolve
     s "You were always so busy, but you always made time for me. Thanks for that, mom."
 
     "Stacy's mom was admirable. You remember when you'd visit her back then. Her mom was a hard worker, yet she always had time for Stacy."
