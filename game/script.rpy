@@ -440,10 +440,9 @@ label seq4:
 
             p "Besides, you look {i}amazing{/i} for your age, ma'am."
 
-            show mom happy_c with dissolve
+            show mom talk_b with dissolve
             "Stacy's mom beams as she fiddled with a piece of her hair."
 
-            
             m "You really think so, sweetie?"
 
             m "If I didn't know you, I'd think you were flirting with me."
@@ -455,7 +454,7 @@ label seq4:
 
     "Eventually, Stacy returned from her phone call, sitting back down whilst noticing the awkward air between you and her mother."
 
-    show mom talk_d at midright with dissolve
+    show mom talk_a at midright with dissolve
     show stacy neutral_c at midleft with dissolve
     s "So, [name], Robert told me you worked at Nexus Corp. How is it?"
 
@@ -465,24 +464,162 @@ label seq4:
 
     p "Eh, you know... typical corporate stuff. It's alright... Keeps things steady for me at least."
 
-    show stacy sad_c at midleft with dissolve
+    show stacy neutral_b at midleft with dissolve
     s "I feel you... My previous job was like that. That's why I moved."
 
     show mom happy_c at midright with dissolve
-    m "You both make me feel young. It reminds me of the time I used to work in a law firm."
+    m "You kids make me feel so young. This reminds me of the time I used to work in a law firm!"
+
+    show stacy angry_c at midleft with dissolve
+    s "Oh please, mom. It's not the same when you own the law firm {i}yourself{/i}."
 
     show stacy neutral_c at midleft with dissolve
-    s "You were always so busy, but you always made time for me. Thanks for that, mom."
+    s "You were always so busy, but you always made time for me...\nThanks for that, mom."
 
-    "Stacy's mom was admirable. You remember when you'd visit her back then. Her mom was a hard worker, yet she always had time for Stacy."
+    "Stacy's mom was admirable. You remember when you'd visit their home back then. Her mom was always there, welcoming you with open arms and prepping food for you two."
 
-    "You couldn't imagine how hard it was. Being a single mother was no joke, but Stacy's mom made it look so effortless. You had to give her credit for that, at least."
+    "You couldn't imagine how hard it was. Being a single mother was no joke, and running your own law firm?"
+    
+    "Stacy's mom made it look so effortless, and it's a lot easier to appreciate that now that you've grown up yourself."
     
     scene black with dissolve
-    jump seq5
+    jump seq5start
 
-label seq5:
-    "(sequence 5 wip)"
+label seq5start:
+    "It's been a couple of days since you've reunited with both Stacy and her mom."
+    
+    "If you were gonna be honest, both women have been plaguing your mind lately."
+
+    scene bg mall with dissolve
+    "To keep your mind off them, you decided to head to your local mall."
+
+    "You heard that a new comic book store has opened, so you decided to drop by and check it out."
+
+    "{i}Oof-!{/i}" with vpunch
+
+    show bg mall_blur with dissolve
+    show stacy neutral_a at chrCenter with dissolve
+    "What you didn't expect was to bump into Stacy at the mall. Did she live nearby? Why is she suddenly showing up everywhere recently?"
+
+    p "Stacy?"
+
+    show stacy neutral_c at chrCenter with dissolve
+    s "Oh...! [name]!"
+
+    s "I didn't expect to bump into you here. Do you come here often?"
+
+    p "Yeah, I live around here actually."
+
+    show stacy happy_c at chrCenter with dissolve
+    s "Really? I just moved around this area for work!"
+
+    s "Guess we'll be seeing each other more, huh?"
+
+    "Amazing."
+
+    "This is what you get for choosing to live relatively close to your old college. You never know who you'll run into out here."
+
+    "Like that one time you bumped into that professor who grilled your research paper alive on a random Tuesday while waiting for the bus..."
+
+    "Awkward was an understatement, but hey, at least he didn't seem to remember your pathetic ass."
+
+    p "So... what brings you here?"
+
+    show stacy neutral_b at chrCenter with dissolve
+    s "Oh, I grabbed some lunch and wanted to watch a movie.\nWhat about you?"
+
+    p "Oh, uh, comic book store."
+
+    p "I heard a new one that just opened, so I decided to drop by and check it out."
+
+    p "What movie are you watching?"
+
+    show stacy happy_b at chrCenter with dissolve
+    s "I'm watching {i}The Conjuring{/i}!"
+
+    s "I'm about to buy tickets right now actually-"
+
+    show stacy neutral_a at chrCenter with dissolve
+    "Before Stacy could finish her sentence, you see her fish her phone out of her pocket.\nIt was ringing, and you couldn't help but wonder who's calling her."
+
+    hide stacy with dissolve
+    s "Mom? Yes, what do you need?"
+
+    show bg mall with dissolve
+    "You wait for her to finish the call with her mom, thinking it would just be a quick call to check on Stacy."
+
+    "As Stacy put the phone down, you see her look a bit conflicted."
+
+    show bg mall_blur with dissolve
+    show stacy neutral_b at chrCenter with dissolve
+    s "My mom called to see if I was free today."
+
+    s "Apparently a grocery store near her place has some good promo. Marked-down prices for fresh meat at like 4-ish pm?"
+
+    show stacy happy_c at chrCenter with dissolve
+    s "You know how mom is, always eager for good deals haha..."
+
+    s "But yeah, she was thinking of inviting me over for a meal after the grocery run. But I'm not really sure I can make it on time."
+
+    show stacy neutral_c at chrCenter with dissolve
+    s "Since, you know... I'm about to go see a movie..."
+
+    "You don't know if this was your imagination, but it seemed that Stacy was hinting at inviting you to go see the movie with her."
+
+    "But at the same time, maybe subbing in to help her mom with the groceries would give you a chance to get closer with Stacy's mom... And a free meal doesn't sound too bad."
+
+    menu:
+        "Watch a movie with Stacy":
+            jump seq5stacy
+
+        "Accompany Stacy's mom with grocery shopping":
+            jump seq5mom
+
+label seq5stacy:
+    show stacy neutral_b at chrCenter with dissolve
+    p "I mean... You're already here and about to buy a ticket."
+
+    p "You already went through the trouble to get here; I know Ms. Collins would understand."
+
+    show stacy neutral_a at chrCenter with dissolve
+    "She still looked hesitant, and you couldn't help but wonder why. Then she dropped the question."
+
+    show stacy happy_b at chrCenter with dissolve
+    s "Would you... want to watch the movie with me?"
+
+    p "Uh... s-sure!"
+
+    "You did something you didn't expect you'd do. You're not really a fan of horror movies, so you don't know what possessed you to watch The Conjuring with Stacy."
+
+    scene black with dissolve
+    "..."
+
+    scene bg cinema with dissolve
+    "Inside the movie theater, you've never felt more anxious than ever."
+
+    "You usually don't mind the dark and cold atmosphere inside. But now that you're watching a horror movie? It feels creepier than usual inside."
+
+    "You glance over at Stacy to see how she's faring while watching the movie."
+
+    show bg cinema_blur with dissolve
+    show stacy scared with dissolve
+    "She also didn't seem immune to the ambience with the way she was grabbing onto the bucket of popcorn in her lap."
+
+    "As you try to focus on the movie, you feel tension creeping up; a telltale sign that a jumpscare was about to happen."
+
+    menu:
+        "Offer your arm to Stacy":
+            $ stacyLove += 1
+            $ renpy.notify("Stacy bond up!")
+            "Stacy looks at you with a grateful expression as she takes hold of your arm."
+            
+        "Tug your hood over your head":
+            p "(wip)"
+
+
+
+label seq5mom:
+    "(sequence 5 mom route wip)"
 
 label seq6:
     "(sequence 6 wip)"
