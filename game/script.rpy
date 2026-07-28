@@ -35,6 +35,26 @@ transform midright:
     xcenter 0.75
     yalign 0.3
 
+# Animates the character shaking
+transform shaking:
+    linear 0.1 xoffset -2
+    linear 0.1 xoffset 3
+    linear 0.1 xoffset 2
+    linear 0.1 xoffset -3
+    linear 0.1 xoffset 0
+    repeat
+
+# Animates the character stretching vertically for a brief moment
+transform bounce:
+    parallel:
+        yoffset 0.5
+        linear 0.1 yoffset 0.52
+        linear 0.1 yoffset 0.48
+        linear 0.1 yoffset 0.5
+    parallel:
+        linear 0.05 yzoom 1.1
+        linear 0.1 yzoom 1
+
 init:
     # Edits the length of a transition
     $ wipeup = CropMove(0.1, "wipeup")
@@ -470,7 +490,7 @@ label seq4:
     show mom happy_c at midright with dissolve
     m "You kids make me feel so young. This reminds me of the time I used to work in a law firm!"
 
-    show stacy angry_c at midleft with dissolve
+    show stacy angry_c at bounce, midleft
     s "Oh please, mom. It's not the same when you own the law firm {i}yourself{/i}."
 
     show stacy neutral_c at midleft with dissolve
@@ -539,7 +559,7 @@ label seq5start:
 
     s "I'm about to buy tickets right now actually-"
 
-    show stacy neutral_a at chrCenter with dissolve
+    show stacy neutral_a at bounce, chrCenter
     "Before Stacy could finish her sentence, you see her fish her phone out of her pocket.\nIt was ringing, and you couldn't help but wonder who's calling her."
 
     hide stacy with dissolve
@@ -602,7 +622,7 @@ label seq5stacy:
     "You glance over at Stacy to see how she's faring while watching the movie."
 
     show bg cinema_blur with dissolve
-    show stacy scared with dissolve
+    show stacy scared_d at chrCenter with dissolve
     "She also didn't seem immune to the ambience with the way she was grabbing onto the bucket of popcorn in her lap."
 
     "As you try to focus on the movie, you feel tension creeping up; a telltale sign that a jumpscare was about to happen."
@@ -612,11 +632,65 @@ label seq5stacy:
             $ stacyLove += 1
             $ renpy.notify("Stacy bond up!")
             "Stacy looks at you with a grateful expression as she takes hold of your arm."
+
+            show stacy scared_c at shaking, chrCenter
+            "{size=70}{i}BOO!!{/i}{/size}" with vpunch
+
+            show stacy scared_a at shaking, chrCenter with dissolve
+            "As the jumpscare happened, you felt Stacy holding on to you tighter as she hid her face in your shoulder."
+
+            "You also felt your heart drop as the cheap jumpscare appeared on the screen, but having Stacy cling to you helped."
             
+            p "You okay...?"
+
+            show stacy scared_d at shaking, chrCenter with dissolve
+            "Stacy nodded, and the poor woman was shaking slightly in her seat."
+
+            "Though, the look on her face tells that she might not last another scare..."
+
+            scene black with wipeleft
+            "Feeling bad for Stacy, you offered to leave mid-screening. You knew staying here any longer wouldn't be good for her."
+
         "Tug your hood over your head":
-            p "(wip)"
+            "Sensing a jumpscare about to happen, you tug your hood over your head as you avert your eyes from the screen."
 
+            "Again, you don't do well with horror. It's not a surprise you're cowering away behind your hood."
 
+            show stacy scared_b at shaking, chrCenter
+            s "{size=70}{i}KYAAAAAAAHHHHH!!!{/i}{/size}" with vpunch
+
+            "You didn't expect the jumpscare to scare Stacy so badly, to the point she jolted in her seat and spilled popcorn everywhere."
+            
+            show stacy scared_d at bounce
+            hide stacy with moveoutleft
+            show bg cinema with dissolve
+            "Stacy felt embarrassed about screaming and making a mess, quickly leaving the movie theater."
+
+            scene black with wipeleft
+            "Not wanting to be alone and feeling bad for her, you decided to follow after her."
+
+    scene bg mall_blur with wipeleft
+    show stacy scared_d at chrCenter with dissolve
+    s "I'm sorry we didn't get to finish the film..."
+
+    p "It's fine... Are you okay?"
+
+    "She nodded, but you could still tell she was shaken up from the film."
+
+    show stacy neutral_a at chrCenter with dissolve
+    s "Thank you though, for coming to watch it with me."
+
+    s "It's been a while since I saw a movie."
+
+    show stacy happy_c at chrCenter with dissolve
+    s "Even though we didn't get to finish it, it was nice hanging out."
+
+    s "Just like the old times..."
+
+    "{i}Just like the old times...{/i}"
+
+    scene black with dissolve
+    jump seq6
 
 label seq5mom:
     "(sequence 5 mom route wip)"
