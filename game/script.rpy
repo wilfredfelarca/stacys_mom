@@ -11,6 +11,7 @@ default momLove = 0
 define p = Character(_("[name]"), color="#9a9370")
 define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
+define c = Character(_("Creep"), color="#905d00")
 
 # Transforms for various uses such as tweening the characters or scenes.
 
@@ -693,7 +694,174 @@ label seq5stacy:
     jump seq6
 
 label seq5mom:
-    "(sequence 5 mom route wip)"
+    p "Uhm... I could accompany her."
+
+    show stacy neutral_c at chrCenter with dissolve
+    s "Huh?"
+
+    p "Your mom... I could accompany her so you can see the movie."
+
+    show stacy neutral_b at chrCenter with dissolve
+    s "But--"
+
+    p "It's okay, I'm not busy. And besides, I'm due for some groceries anyway."
+
+    "Stacy sighed as she nodded. You couldn't help but wonder if this was just your imagination, but she looked somewhat disappointed."
+
+    scene bg mall with dissolve
+    "She fished her phone out to call her mom, letting her know you'll accompany her on the grocery run."
+
+    scene black with dissolve
+    "..."
+
+    scene bg city with dissolve
+    "You arrive at the familiar grocery store where your family used to shop at. You haven't been here in years, especially not after your family moved out of the neighborhood."
+
+    show bg city_blur with dissolve
+    show mom talk_c at chrCenter with dissolve
+    m "There you are, [name]!"
+
+    show mom talk_d at bounce, chrCenter
+    m "I can't lie, I was surprised when Stacy called to tell me that you're accompanying me for this."
+
+    p "Oh, yeah- I bumped into her at a local mall in our city."
+
+    p "I figured I'd accompany you because I was due for some groceries anyway, haha..."
+
+    show mom talk_f at chrCenter with dissolve
+    m "That makes sense... but in a different city? Won't that be a hassle to bring back?"
+
+    p "Not at all...! We're in neighboring cities anyway."
+
+    m "Alright then..."
+
+    show mom talk_b at chrCenter with dissolve
+    m "But don't be a stranger, sweetie. I really don't mind if you want a ride back. Just say the word."
+
+    "You nod your head sheepishly, embarrassed at the idea of being driven back home like a child." with vpunch
+
+    show mom wink_talk at chrCenter with dissolve
+    m "Before you go though, at least let me make you a nice home-cooked meal after our grocery run?"
+
+    "You sigh and give her another nod. Besides, the free meal is what you came for anyway."
+
+    "And because you may or may not have wanted a chance to get closer with Stacy's mom. {i}You sneaky bastard.{/i}"
+    
+    hide mom with dissolve
+    scene black with wiperight
+    scene bg shop with wiperight
+    "The two of you walk side by side inside the grocery store."
+
+    "As you check your watch, you realize it's almost 4 pm."
+
+    show bg shop_blur with dissolve
+    show mom talk_d at chrCenter with dissolve
+    p "Uh... guess we should head to the frozen section then? It's almost time for the sale."
+
+    show mom happy_c at bounce, chrCenter
+    m "Oh, right! Wouldn't want to miss out on those sweet deals~!"
+
+    hide mom with dissolve
+    "As you arrive at the frozen meat section, you see some staff already marking down prices for the various cuts of fresh meat."
+
+    show meat with dissolve:
+        xalign 0.5
+        yalign 0.5
+    "You arrived just in time! You take a browse around the different freezers."
+
+    "But... to be honest? You didn't cook much, so you had no idea which cuts of meat could work for which dish."
+
+    hide meat with dissolve
+    show mom talk_d at midright with dissolve
+    show creep speaking_a at midleft with dissolve
+    "You look over at Stacy's mom to see what she's buying, only to notice a random dude checking her out inappropriately."
+
+    menu:
+        "Confront the stranger":
+            "As the stranger approaches Stacy's mom, you feel a sudden spark of bravery rise within you."
+
+            "Was it bravery, or stupidity?"
+
+            "You're not certain, but you don't know what possessed you to come up to this six-foot-tall man who clearly towered over you."
+
+            show creep speaking_c with dissolve
+            c "Hey, gorgeous. You here by yourself?"
+
+            show mom sad_a with dissolve
+            "Stacy's mom turned to look at the man, and she looked uncomfortable at the unwanted attention."
+
+            "Before she could respond, you stood in between her and the creep."
+
+            $ momLove += 1
+            $ renpy.notify("Stacy's mom bond up!")
+            p "She's with me, dude."
+
+            show creep speaking_a with dissolve
+            c "Ha! And who are you supposed to be? Her little lap dog?"
+
+            "You felt your blood boiling as this man ridiculed you, but you decided to stand your ground and try to make this guy go away."
+
+            show creep speaking_b at chrCenter with easeoutright
+            c "Say, you and me, how about we should ditch this loser and have some fun elsewhere..."
+
+            show mom sad_b with dissolve
+            m "I-I'm good, no thank you."
+
+            "Like a lot of shitty men, this creep didn't back down even after Stacy's mom already said no."
+
+            p "You heard the lady, a no's a no."
+
+            show creep angry with dissolve
+            c "Dude, get out the fucking way. I'm not talking to you."
+
+            "The creep shoved you aside, but you didn't back down like a loser. You shoved him back, which was the biggest mistake ever." with hpunch
+
+            "One thing led to another until eventually-" with vpunch
+
+            $ renpy.with_statement(vpunch)
+            pause 0.25
+            $ renpy.with_statement(hpunch)
+            pause 0.25
+
+            scene black
+            "{size=70}{b}THWACK!!{/b}{/size}" with vpunch
+
+            "Before you knew it, your vision faded to black. The last thing you saw was Stacy’s mom panicking as she ran to your side."
+            
+        "Try to stay out of it":
+            "Like a coward, you decide to stay out of it. Especially since this man was about 6 feet tall and towered over you."
+
+            show creep speaking_c at bounce, chrCenter with easeoutright
+            "You see him approach Stacy's mom and invade her personal space by standing too close for comfort."
+
+            "You didn't want to completely abandon her, so you stand behind a nearby freezer to eavesdrop on them both."
+
+            c "Hey, gorgeous. You here by yourself?"
+
+            show mom sad_a with dissolve
+            m "Uhm... No, I'm with a friend."
+            
+            show creep speaking_a with dissolve
+            c "Oh? I don't see them anywhere though."
+
+            show creep speaking_b with dissolve
+            c "Say, you and me, how about we should ditch this place and have some fun elsewhere..."
+
+            m "I'm good... I don't really want to..."
+
+            show mom sad_b with dissolve
+            "Stacy's mom looked uncomfortable, and she noticed you standing behind one of the nearby freezers."
+
+            "She kept anxiously looking towards you, compelling you to eventually come out of your hiding spot to at least try to get this creep off her back."
+
+            p "Hey man... Uh, I don't think she wants to, haha..."
+
+            show creep shocked with dissolve
+            c "And {i}who{/i} are you?"
+
+            p "Uh- Her daughter's old friend...?"
+
+            
 
 label seq6:
     "(sequence 6 wip)"
