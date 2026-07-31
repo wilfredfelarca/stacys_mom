@@ -1181,10 +1181,48 @@ label seq6mom: ## HOUSE - MOM BOND
 
     p "The food was amazing, Ms. Collins... Your cooking never disappoints."
 
+    show mom happy_a with dissolve
+    "Stacy's mom returns the smile, and you don't know if it was your imagination, but she also looked a bit sheepish."
+
+    "Awkward silence filled the air as both of you cleaned up, with Stacy's mom washing the dishes, and you clearing out the table."
+
+    show mom talk_f with dissolve
+    m "[name]?"
+
+    p "Yes, ma'am....?"
+
+    $ momLove += 1
+    $ renpy.notify("Stacy's mom bond up!")
+    show mom talk_b with dissolve
+    m "{i}Thank you.{/i} For always helping out when you can."
+
+    m "And enjoying my cooking..."
+
+    show mom talk_a with dissolve
+    m "Ever since Stacy moved out, I've been trying to adjust to the quiet space... I appreciate when you go out of your way to spend time with me."
+
+    "You feel your ears heating up, flustered at how genuine Stacy's mother was."
+
+    p "I-It's my pleasure, ma'am."
+
+    show mom wink_talk with dissolve
+    m "I still do hope you drop the formalities though... Just call me Debbie, sweetheart."
+
+    "She teases you again and giggles as she watches you avoid eye contact."
+
+    scene black with dissolve
+    "Despite feeling socially anxious, you'd say you had a nice time today!"
+    
+    "The food was great, and you got a bit of alone time with Stacy's mother as you helped her prep for the dinner party and clean afterwards."
+
+    "Safe to say you're looking forward to the next time you'll spend some time with Stacy's mom."
+
+    jump seq7
 
 label seq7:
 
     #centered "this text is in the center"
+    "seq7 wip"
 
     jump start_minigame #label in File 'minigame_fable_2'
     # After the minigame, it will jump to "end", as specified in said file!
