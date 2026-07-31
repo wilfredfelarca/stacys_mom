@@ -305,7 +305,7 @@ label seq2:
     scene black with dissolve
     jump seq3
 
-label seq3:
+label seq3: ## REUNION - STACY BOND
     "..."
 
     scene bg apartment with dissolve:
@@ -426,7 +426,7 @@ label seq3:
     scene black with dissolve
     jump seq4
 
-label seq4:
+label seq4: ## DINER - MOM BOND
     scene bg diner with dissolve
     "It was 6:43 pm, and in a diner, you sat with both Stacy and her mother."
 
@@ -514,7 +514,7 @@ label seq4:
     scene black with dissolve
     jump seq5start
 
-label seq5start:
+label seq5start: ## MALL - BRANCH
     "It's been a couple of days since you've reunited with both Stacy and her mom."
     
     "If you were gonna be honest, both women have been plaguing your mind lately."
@@ -604,7 +604,7 @@ label seq5start:
         "Accompany Stacy's mom with grocery shopping":
             jump seq5mom
 
-label seq5stacy:
+label seq5stacy: ## CINEMA - STACY BOND
     show stacy neutral_b at chrCenter with dissolve
     p "I mean... You're already here and about to buy a ticket."
 
@@ -701,7 +701,7 @@ label seq5stacy:
     scene black with dissolve
     jump seq6start
 
-label seq5mom:
+label seq5mom: ## GROCERIES - MOM BOND
     p "Uhm... I could accompany her."
 
     show stacy neutral_c at chrCenter with dissolve
@@ -936,7 +936,7 @@ label seq5mom:
     scene black with dissolve
     jump seq6start
 
-label seq6start:
+label seq6start: ## BAKERY - BRANCH
     "Ever since that day, you've been getting more chances to hang out with Stacy and her mom."
 
     scene bg park_blur with dissolve
@@ -1002,7 +1002,7 @@ label seq6start:
             hide package with dissolve
             jump seq6mom
 
-label seq6stacy:
+label seq6stacy: ## OFFICE - STACY BOND
     "As you've made your mind up, you pull your phone out and shoot Stacy a text."
 
     p "{i}hey, are you free rn?{/i}"
@@ -1093,8 +1093,94 @@ label seq6stacy:
 
     jump seq7
 
-label seq6mom:
-    "seq6mom wip"
+label seq6mom: ## HOUSE - MOM BOND
+    "As you've made your mind up, you pull your phone out and shoot Stacy's mom a text."
+
+    "You don't know how you've reached the point in your life where you have your friend's mom's phone number in your contacts, but you do. Own up to it."
+
+    p "{i}ms collins, are you free right now?{/i}"
+
+    m "{i}Hi, sweetie! You messaged just in time!{/i}"
+
+    m "{i}I'm hosting a dinner party in a bit, I'm just doing prep at the moment.{/i}"
+
+    m "{i}Why don't you come over?{/i}"
+
+    "A dinner party? I guess this is the perfect time to spend some time together with Stacy's mom. But you somehow feel shy at the thought of being surrounded by other people older than you."
+
+    "And besides, she might be busy with prepping for the dinner party right now. What if you burden her?"
+
+    p "{i}is it really okay?{/i}"
+
+    p "{i}would it be okay if i at least helped you with prepping?{/i}"
+
+    m "{i}Please, I insist you come, [name]!{/i}"
+
+    m "{i}You know you're always welcome here, right?{/i}"
+
+    show bg bakery_inside with dissolve:
+        zoom 1.7
+        xalign 0.5
+        yalign 0.8
+    show package with easeinbottom:
+        xalign 0.5
+        yalign 0.75
+        zoom 1.25
+    "You looked down sheepishly at the box of pastries in your free hand, and decided: {i}it's now or never.{/i}"
+
+    scene black with wipeleft
+    "You take a bus ride to the Collins residence, and the ride feels bumpier than usual. You hold on tight to the boxes of pastries, just so that they won't get messed up or jostled too much."
+
+    scene bg house_outside with wipeleft
+    "Eventually, you arrive in the familiar neighborhood. You stand outside the familiar house, feeling nervous as you ring the doorbell."
+
+    m "Cooooming!~"
+
+    "You hear Stacy's mom call from inside the house. She answers the door with the most genuine smile on her face. She always knew how to make you feel welcome at her home."
+
+    show bg house_outside_blur with dissolve
+    show mom talk_a at chrCenter with dissolve
+    m "I'm so glad you made it, dear!"
+
+    m "Come in!"
+
+    "You smile sheepishly at the older woman. She notices the box of pastries you held in one hand and tilts her head curiously."
+    
+    show mom talk_b with dissolve
+    m "Ooooh, what'd you bring, sweetie?"
+
+    p "Oh, this...? They're pastries from Little Patisserie."
+
+    show mom happy_c at bounce
+    "Stacy's mom beamed, her eyes shining with excitement."
+
+    m "Little Patisserie! I love that bakery~!"
+
+    p "R-Really? I'm glad then..."
+
+    p "I got a variety in these boxes; hopefully they'd be enough for everyone later."
+
+    m "That's perfect, [name]. Thank you for bringing them over!"
+
+    scene bg living with dissolve
+    "You helped Stacy's mom with prepping for the dinner party before the guests arrived. You had to admit, you had a nice time with her."
+
+    "As the guests poured in, you felt your social anxiety acting up. You knew there was gonna be a group, but you didn't expect this much..."
+
+    "The dinner party went on and you kept to yourself the entire time, not wanting to embarrass yourself in front of these other older people."
+
+    "Slowly but surely, people started to leave until it was just you and Stacy's mom."
+
+    "You offered to stay with her and help clean up."
+
+    scene bg living_blur with dissolve
+    show mom talk_c at chrCenter with dissolve
+    m "How was dinner, [name]? Did you enjoy the new dishes I made?"
+    
+    "You smile and nod at Stacy's mom sheepishly as you wipe down her dining table."
+
+    p "The food was amazing, Ms. Collins... Your cooking never disappoints."
+
 
 label seq7:
 
