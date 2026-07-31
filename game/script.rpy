@@ -3,12 +3,12 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-default name = "Bepis" #Bepis is the failsafe player name. Don't ask.
+default name = "Dayyo" #Dayyo is the failsafe player name. Don't ask.
 default stacyLove = 0
 default momLove = 0
 
 
-define p = Character(_("[name]"), color="#9a9370")
+define p = Character(_("[name]"), color="#60877b")
 define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 define c = Character(_("Creep"), color="#905d00")
@@ -101,7 +101,7 @@ label start:
     $ name = renpy.input("Your name... it's:")
     $ name = name.strip()
     if name == "":
-        $ name= _("Bepis")
+        $ name= _("Dayyo")
     
     scene bg apartment_night with dissolve:
         zoom 1.2
@@ -699,7 +699,7 @@ label seq5stacy:
     "{i}Just like the old times...{/i}"
 
     scene black with dissolve
-    jump seq6
+    jump seq6start
 
 label seq5mom:
     p "Uhm... I could accompany her."
@@ -934,12 +934,171 @@ label seq5mom:
     "{i}And{/i} you got to spend time with Stacy's mom, so a win is a win!"
 
     scene black with dissolve
-    jump seq6
+    jump seq6start
 
-label seq6:
-    "(sequence 6 wip)"
+label seq6start:
+    "Ever since that day, you've been getting more chances to hang out with Stacy and her mom."
+
+    scene bg park_blur with dissolve
+    show stacy happy_c at chrCenter with dissolve
+    "Just the other day, you and Stacy went out for a jog at the park. It was a nice change of scenery instead of being cooped up at home all day."
+
+    scene bg kitchen_blur with dissolve
+    show mom talk_a at chrCenter with dissolve
+    "And not only that, but you also got to spend some time with her mom. She was experimenting with her cooking and called you over to test some apple pie she baked."
+
+    show bg skyclear with dissolve
+    show mom talk_a at midright with easeoutright
+    show stacy happy_c at midleft with dissolve
+    "Either way, both times spent with women were pleasant. Pleasant to the point it's made you look forward to the next time you get to hang out with either of them."
+
+    scene black with dissolve
+    "But in life, it's not always sunshine and rainbows. God, you wish. You still have bills to pay, and work to worry about."
+
+    "You're fortunate enough to have a stable job that sustains you well. But sometimes you get swamped with work to the point you arrive home and just collapse in bed."
+    
+    "Sometimes you forget how draining it is to work in a corporation."
+
+    "But you chose this life, so there's not much you could do. It's all you've known this past few years, and it's what keeps you afloat."
+
+    scene bg city with dissolve
+    "You check your watch and for once, you got to leave work early! You don't know what possessed you to lock in and finish your work this fast, but at least you're free!"
+
+    "To celebrate, you decided to pass by a nearby bakery to treat yourself to a sweet treat."
+
+    scene bg bakery_outside with dissolve
+    "{i}\"Buy a dozen, get a dozen free!\"{/i}"
+
+    "You stare at the promo poster pasted on the bakery's window."
+
+    "{i}\"Celebrate Little Patisserie's 1st birthday with this week-long sale!\"{/i}"
+
+    "I guess it's your lucky day today, seeing how the sale just started and you were able to get off work to catch it."
+
+    "You didn't want to pass this opportunity up; a sale is a sale after all... And you'd take any opportunity to save some money and get a bargain."
+
+    "But do you {i}really{/i} need two dozen pastries...? On one hand, it would be nice to stock up on pastries to indulge in. But you're just one person."
+
+    "You don't know how long it'd take you to eat through 24 pastries, and it'd be a waste if they went bad before you could fully enjoy them all..."
+
+    "...!\nAn idea went off in your head like a light bulb."
+
+    scene bg bakery_inside with dissolve
+    "You head inside and decide to participate in the ongoing promo."
+
+    show package with easeinbottom:
+        xalign 0.5
+        yalign 0.5
+    "You pick up a bunch of pastries that you think would taste good. From croissants to donuts, you soon walk out with two boxes of pastries."
+
+    "This could be the perfect opportunity to spend some more time with Stacy {i}or{/i} her mom."
+
+    menu:
+        "Bring a box to Stacy":
+            hide package with dissolve
+            jump seq6stacy
+
+        "Bring a box to Stacy's mom":
+            hide package with dissolve
+            jump seq6mom
+
+label seq6stacy:
+    "As you've made your mind up, you pull your phone out and shoot Stacy a text."
+
+    p "{i}hey, are you free rn?{/i}"
+
+    s "{i}Not really, sorry [name]...{/i}"
+
+    s "{i}I'm stuck at work and my team's pretty stressed about this project we're handling because of some issues we encountered.{/i}"
+
+    p "{i}oh, im sorry to hear that.. is there anything i can do to help?{/i}"
+
+    s "{i}It's okay [name], you don't have to go through the trouble.{/i}"
+
+    scene bg bakery_inside with dissolve:
+        zoom 1.7
+        xalign 0.5
+        yalign 0.8
+    show package with dissolve:
+        xalign 0.5
+        yalign 0.75
+        zoom 1.25
+    "You gaze at the spare box of pastries in your free hand."
+
+    p "{i}i have some spare pastries w me, if you'd like..?{/i}"
+
+    p "{i}idk, maybe it could help cheer up everybody's spirits{/i}"
+
+    s "{i}Really? Are you sure? You don't have to, I'd feel bad...{/i}"
+
+    p "{i}please, i insist! itd be a good lil break for all of you too.{/i}"
+
+    scene bg city with dissolve
+    "Stacy sent you the address of her office, and it's actually pretty near the bakery! It's a five-minute walk, and you make your way there easily."
+
+    scene black with wipeleft
+    "You enter the building and take the elevator to the 8th floor where Stacy's at, box of pastries in hand."
+
+    "{i}DING!{/i}"
+
+    scene bg office with wiperight
+    
+    "The elevator door opens, and you see Stacy in a conference room along with five other people. They all looked exhausted."
+
+    "You knock on the door gently and wave at Stacy through the window."
+
+    "Her expression lights up the moment she sees you, and she immediately meets you at the door."
+
+    show bg office_blur with dissolve
+    show stacy happy_a at chrCenter with dissolve
+    show package with easeinbottom:
+        xalign 0.7
+        yalign 0.75
+        zoom 0.8
+    s "[name]! Thank you so much for these, you're the sweetest..."
+
+    "Stacy's co-workers saw that you brought some pastries over, and their expressions also lit up."
+
+    hide package with easeoutbottom
+    "You set the box of baked goods on the table, and each of Stacy's co-workers thanked you as they each took one."
+
+    "Bringing over some baked goods seemed to lift everyone's spirits up. Before you left, Stacy pulled you aside to talk to you privately."
+
+    show stacy happy_c with dissolve
+    s "Hey, I just wanted to thank you again for coming."
+
+    s "You didn't have to do all this, you know?"
+
+    $ stacyLove += 1
+    $ renpy.notify("Stacy bond up!")
+    show stacy happy_b at bounce
+    s "But I-- no, {i}we{/i} appreciate it so much."
+
+    p "I'm glad I was able to brighten up everyone's spirits, even if it's just a little bit."
+
+    "Stacy had a look of pure gratitude in her eyes, and the next thing she did caught you off-guard."
+
+    hide stacy with dissolve
+    "You were pulled into a sudden hug, and for some reason, you felt your heart do a flip. You didn't want to just stand there awkwardly, so you reciprocated the gesture." with hpunch
+
+    show stacy happy_c at chrCenter with dissolve
+    "When the hug broke, you couldn't help but feel a bit disappointed. You're not sure why you feel this way, but you do."
+
+    "You gave her one last tiny wave as you left to go home."
+
+    scene black with dissolve
+    "Sure, this wasn't a full-on hangout, but at least you got to see Stacy today! You hoped your little act of kindness left a good impression on her."
+
+    "Safe to say you're looking forward to the next time you'll spend some time with Stacy."
+
+    jump seq7
+
+label seq6mom:
+    "seq6mom wip"
 
 label seq7:
+
+    #centered "this text is in the center"
 
     jump start_minigame #label in File 'minigame_fable_2'
     # After the minigame, it will jump to "end", as specified in said file!
