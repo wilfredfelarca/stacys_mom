@@ -13,7 +13,7 @@ define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 define c = Character(_("Creep"), color="#905d00")
 
-# Transforms for various uses such as tweening the characters or scenes.
+### Transforms for various uses such as tweening the characters or scenes.
 
 #transform sepia:
     #matrixcolor TintMatrix("#d7be89")
@@ -35,6 +35,14 @@ transform midright:
     zoom 0.5
     xcenter 0.75
     yalign 0.3
+
+# Shakes the character once
+transform oneShake:
+    linear 0.03 xoffset -24
+    linear 0.03 xoffset 36
+    linear 0.03 xoffset 12
+    linear 0.03 xoffset -18
+    linear 0.03 xoffset 0
 
 # Animates the character shaking
 transform shaking:
@@ -823,13 +831,13 @@ label seq5mom:
             $ renpy.with_statement(hpunch)
             pause 0.25
 
-            scene black
-            "{size=70}{b}THWACK!!{/b}{/size}" with vpunch
+            scene black with vpunch
+            "{size=70}{b}THWACK!!{/b}{/size}"
 
-            "Before you knew it, your vision faded to black. The last thing you saw was Stacy’s mom panicking as she ran to your side."
+            "Before you knew it, your vision faded to black. The last thing you saw was Stacy's mom panicking as she ran to your side."
             
         "Try to stay out of it":
-            "Like a coward, you decide to stay out of it. Especially since this man was about 6 feet tall and towered over you."
+            "Like a coward, you decide to stay out of it. Especially since this man was about six feet tall and towered over you."
 
             show creep speaking_c at bounce, chrCenter with easeoutright
             "You see him approach Stacy's mom and invade her personal space by standing too close for comfort."
@@ -861,7 +869,72 @@ label seq5mom:
 
             p "Uh- Her daughter's old friend...?"
 
-            
+            show creep angry at bounce
+            "The creep stared at you with a raised eyebrow, and shoved you aside like you were nothing." with hpunch
+
+            "Feeling helpless, you look around to see what you could do to keep this creep away from bothering Stacy's mom."
+
+            show milk with dissolve:
+                xalign 0.25
+                yalign 0.8
+            "And there you spot it: a row of milk bottles at the nearby dairy section."
+
+            show milk with easeoutright:
+                xalign 0.5
+                yalign 1.0
+
+            show milk with easeoutright:
+                xalign 0.5
+                yalign -3.0
+            hide milk
+            show creep shocked
+            "Without thinking, you panicked and tossed one at the guy." with hpunch
+
+            show creep angry at oneShake, chrCenter
+            "You didn't really know what to expect when you threw it. But upon hitting the creep, the milk bottle spilled open and drenched the guy."
+
+            "Luckily, it doesn't shatter but the guy looked pissed off, and next thing you know you see his fist flying at you."
+
+            scene black with vpunch
+            "{size=70}{b}THWACK!!{/b}{/size}"
+
+            "Your vision fades to black as you feel your body hit the ground."
+
+    "..."
+
+    scene bg living with dissolve
+    "After the incident, you find yourself sitting in the familiar home you kept frequenting during the summer of '03."
+
+    "The Collins residence, a.k.a Stacy's home before she moved out on her own."
+
+    show bg living_blur with dissolve
+    show mom sad_c at chrCenter with dissolve
+    "Stacy's mom kept fussing over you as she held an ice pack over the fresh black eye on the right side of your face."
+
+    m "Oh god... This looks... {i}awful...{/i}"
+
+    m "I'm sorry you got punched because of me, sweetie..."
+
+    p "I-It's fine, Ms. Collins..."
+
+    p "That guy was being a creep anyway... and a nuisance."
+
+    p "I was being reckless, I'm sorry for worrying you."
+
+    show mom happy_a with dissolve
+    "Stacy's mom looked at you with such kindness in her eyes. To make you feel better, she got to work on preparing that home cooked meal she promised."
+
+    hide mom with dissolve
+    show food with dissolve:
+        xalign 0.5
+        yalign 0.4
+        zoom 1.75
+    "In the end, it was worth the wait. Despite the throbbing pain on the right side of your face, you got to enjoy a delicious home-cooked meal."
+
+    "{i}And{/i} you got to spend time with Stacy's mom, so a win is a win!"
+
+    scene black with dissolve
+    jump seq6
 
 label seq6:
     "(sequence 6 wip)"
