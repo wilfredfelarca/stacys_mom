@@ -1482,7 +1482,7 @@ label seq7c:
 
     jump seq8
 
-label seq8:
+label seq8: ## FINAL BRANCH
     scene bg office with dissolve
     "It's been a week since you last saw Stacy or her mom. You've been busier than ever at work, and you just yearn for a break."
 
@@ -1740,7 +1740,137 @@ label badEnd:
     jump end
 
 label stacyEnd:
-    "stacywip"
+    hide mom with easeoutright
+    show stacy happy_c at chrCenter with easeinleft
+    "All this time you've known Stacy, you only saw her as a friend. It was always her mom you had a crush on."
+
+    "But that is not the case anymore."
+
+    scene bg park_night with dissolve
+    "You reach for your phone and dial Stacy's number."
+
+    "She answers almost immediately, which makes your heart pound louder in your ears."
+
+    s "{i}Hello? [name], did you need something?{/i}"
+
+    p "Stacy, please meet me at Seashell Coast!"
+
+    s "{i}H-Huh...? Why? The sun hasn't come up yet.{/i}"
+
+    p "Please... this is {i}really{/i} important..."
+
+    "You can feel Stacy's hesitation through the phone call, but she sighs as she agrees to meet you at the local beach in your city."
+
+    scene black with wipeleft
+    "The moment the call ended, you ran straight from the park with one place in mind:"
+
+    scene bg beach_night with wipeleft
+    "{i}Seashell Coast.{/i}"
+
+    "You thought this would be the perfect place to confess your love to someone you've known for so long."
+
+    "A beautiful beach covered in golden sand that glimmers under both the moon and sunlight, and water a beautiful shade of blue that reminded you of Stacy's eyes."
+    
+    scene bg beach_night with dissolve:
+        zoom 1.3
+        xalign 0.5
+        yalign 1.0
+    "You arrive first, panting. Good, you had time to calm yourself down before meeting with Stacy. You take a deep breath and inhale that fresh sea salt air."
+
+    "You straighten up and start practicing in your head how you'll confess your love to Stacy."
+
+    "You pace back and forth, mumbling to yourself. You waited anxiously, afraid that Stacy wouldn't show up and leave you hanging."
+
+    "But you trusted her, she wouldn't break your heart like this."
+
+    "Right...?"
+
+    scene bg beach_night with dissolve
+    "Before you could overthink any further, you feel a gentle tap on your shoulder."
+
+    "It's her."
+
+    scene bg beach_sunset_blur with dissolve
+    show stacy neutral_b at chrCenter with dissolve
+    "{i}Stacy...{/i}"
+
+    s "You wanted to meet me...?"
+
+    "By the time she arrived, the sun had already started to rise, helping set the ambience for your confession."
+
+    "You take a deep breath once more and hold both Stacy's hands in yours."
+
+    show stacy neutral_a at oneShake
+    s "...!"
+
+    s "[name]...? Wha-"
+
+    p "Stacy Collins..."
+
+    p "I've known you since we were in college."
+
+    p "I'm gonna be honest and not lie to you saying that I fell head over heels the moment I met you."
+
+    p "Because that's not the case with my feelings, and there's nothing wrong with that. These past few weeks, my admiration for you has grown tenfold."
+
+    show stacy neutral_c at oneShake
+    "Stacy looks at you with hope in her eyes... Maybe she's hoping for something... Something with you."
+
+    p "What I'm saying is..."
+
+    p "{i}Stacy, you're the one for me.{/i}"
+
+    show stacy sad_a at oneShake
+    pause 0.75
+    show stacy sad_a at oneShake
+    pause 0.25
+    show stacy sad_a at oneShake
+    pause 0.75
+
+    show stacy sad_c at oneShake:
+        zoom 0.65
+        yalign 0.3
+    "Tears formed in Stacy's eyes as she hugged you tightly." with vpunch
+    
+    s "[name]..."
+
+    s "I... I-I..."
+
+    show stacy sad_c at oneShake
+    "She couldn't stop the tears falling from her eyes as she clung to you tightly."
+
+    s "I feel the same way..."
+
+    show stacy sad_c at chrCenter with dissolve
+    "She pulled back to meet your gaze."
+
+    s "All my life, the people I've dated always wanted my mom over me."
+
+    s "They'd be interested at first, but when they meet my mom, it’s like they stopped caring about me."
+
+    show stacy sad_a with dissolve
+    s "I know it's a harmless crush most of the time, but I can't help it... I can't help but feel worthless every time it happens."
+
+    s "I felt bad even resenting my own mother at one point, because it's {i}not{/i} her fault..."
+
+    show stacy sad_b with dissolve
+    s "I'm sorry... Did I ramble too much?"
+
+    scene bg beach_sunset with dissolve
+    "You cupped Stacy's face with both your hands as you slowly leaned in for a kiss. Bold move, but to your surprise, Stacy kissed you first."
+
+    show bg beach_sunset_blur with dissolve
+    show stacycg with easeinleft
+    "When the kiss broke, Stacy looked at you with watery eyes."
+
+    p "Is this enough proof of me choosing you?"
+
+    "She chuckles softly and hugs you again."
+    
+    "{b}{i}In the end, Stacy was indeed the girl for you.{/i}{/b}"
+
+    jump end
+
 
 label momEnd:
     "momwip"
