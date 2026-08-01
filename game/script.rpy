@@ -7,6 +7,10 @@ default name = "Dayyo" #Dayyo is the failsafe player name. Don't ask.
 default stacyLove = 0
 default momLove = 0
 
+# Sequence 7 variables
+
+default seen_photos = False
+default seen_journal = False
 
 define p = Character(_("[name]"), color="#60877b")
 define s = Character(_("Stacy"), color="#b535c9")
@@ -14,9 +18,6 @@ define m = Character(_("Stacy's Mom"), color="#da203f")
 define c = Character(_("Creep"), color="#905d00")
 
 ### Transforms for various uses such as tweening the characters or scenes.
-
-#transform sepia:
-    #matrixcolor TintMatrix("#d7be89")
 
 # A new "center" transform specifically for character sprites
 transform chrCenter:
@@ -1091,7 +1092,7 @@ label seq6stacy: ## OFFICE - STACY BOND
 
     "Safe to say you're looking forward to the next time you'll spend some time with Stacy."
 
-    jump seq7
+    jump seq7a
 
 label seq6mom: ## HOUSE - MOM BOND
     "As you've made your mind up, you pull your phone out and shoot Stacy's mom a text."
@@ -1217,18 +1218,249 @@ label seq6mom: ## HOUSE - MOM BOND
 
     "Safe to say you're looking forward to the next time you'll spend some time with Stacy's mom."
 
-    jump seq7
+    jump seq7a
 
-label seq7:
+label seq7a:
+    scene bg apartment with dissolve:
+        zoom 1.2
+        xcenter 0.5
+    "At this point in your life, getting a message from either Stacy or her mom no longer surprised you. You check your phone as you feel it vibrate in your pocket."
 
-    #centered "this text is in the center"
-    "seq7 wip"
+    "{i}(BZZT BZZT){/i}"
+
+    s "{i}Hey, are you free today? Wanna come over?{/i}"
+
+    p "{i}sure. to do what exactly?{/i}"
+
+    s "{i}Summon a demon.{/i}"
+
+    "...???"
+
+    s "{i}Just kidding LOL. My mom needs help with her computer, but she's in a rush to leave for some yoga class right now.{/i}"
+
+    s "{i}I don't really know how to deal with it, but since you're pretty good at computers, I figured you could help?{/i}"
+
+    s "{i}I'm also dog-sitting for her right now, and I figured we could have a movie marathon after you deal with her computer.{/i}"
+
+    s "{i}How does that sound?{/i}"
+
+    p "{i}sure, why the hell not? i have the day off work anyway.{/i}"
+
+    scene black with wipeleft
+    "..."
+
+    scene bg house_outside with wipeleft
+    "As you rung the doorbell of the familiar doorstep, you see Stacy's mom."
+
+    show bg house_outside_blur with dissolve
+    show mom sad_b at chrCenter with dissolve
+    m "[name]! Thank heavens, you're here."
+
+    m "I assume Stacy's told you about my computer?"
+
+    p "Uhh... Yeah, she did. What's exactly the issue with it?"
+
+    show mom sad_a with dissolve
+    m "I'm not really sure, but it's gotten so slow ever since I downloaded some \"virus cleaner\" I saw online."
+
+    p "Virus cleaner-?"
+
+    m "Yeah... Anyways, I'll catch you later, okay?"
+
+    show mom talk_e with dissolve
+    m "Just ask Stacy to lead you to my computer. I have a yoga class to attend."
+
+    scene bg hallway with dissolve
+    "As Stacy's mom left, you made your way inside the house. What greets you is a stubby, short-legged dog barking happily."
+
+    s "Porkchop! Come here, boy!" with hpunch
+
+    "You see Stacy chasing after the dog with a bag of treats in her hand."
+
+    scene bg hallway_blur with dissolve
+    show stacy neutral_b at chrCenter with dissolve
+    s "Oh, hey! You made it. The computer's upstairs in the master bedroom."
+
+    s "I'll start making us snacks while you work on the computer. Just come back down when you're done."
+
+    scene bg bedroom with wipeleft
+    "As you made your way to the master bedroom, you couldn't help but feel like you're intruding. So you hurry and find the computer to get it over with."
+
+    show popups with hpunch
+    "Upon opening the computer, you were blasted with back to back pop-ups of random programs launching at startup."
+
+    p "Holy malware...!"
+
+    p "Let's see... How would I fix this?"
+
+    hide popups with dissolve
+    "After clicking around for' what felt like forever, you managed to rid the PC of malware."
+
+    "You take a deep breath and lean back in your seat."
+
+    show bg bedroom with dissolve:
+        zoom 1.7
+        xalign 0.5
+        yalign 1.0
+    "You look around, and notice a small wooden chest under the bed."
+
+    "You don't know what's gotten into you, but you decided to snoop around and see what the chest contained."
+
+    "As expected, it was locked. Any normal person would see this and leave the locked container alone, but you are one nosy bastard."
+
+    "After looking around, you spot some bobby pins on the vanity and decide to use it to try and get to the wooden chest."
 
     jump start_minigame #label in File 'minigame_fable_2'
-    # After the minigame, it will jump to "end", as specified in said file!
-    # TODO: Make a dedicated function "label" for the minigame script to jump to when its done!
-    # It will work by having some dedicated plot variable that it checks via else-if to know which scene to jump to!!
+    # After the minigame, it will jump to "seq7b", as specified in said file!
+
+label seq7b:
+    p "Aha! Opened!" with vpunch
+
+    "You don't know what to expect inside the chest, but hopefully it's nothing scandalous."
+
+    "As you peer inside, you find a journal and a couple of photo albums."
+
+    jump seq7menu
+
+label seq7menu:
+    menu:
+        "Pick up the photo album" if not seen_photos:
+            $ seen_photos = True
+
+            scene bg bedroom_blur with dissolve:
+                zoom 1.7
+                xalign 0.5
+                yalign 1.0
+            "As you pick the photo album up, you flip it open."
+
+            "Inside, there are photos of a young Stacy and her mom. Her mom looked so much like her when she was younger, and Stacy was an adorable kid."
+
+            "The more you flip through the album, the more you get to see memories of a young Stacy growing up, along with photos of her mom."
+
+            "You can't help but notice the amount of love put into this album. Every page had a little note that Stacy's mom wrote about each photographed moment."
+
+            "From little moments like Stacy's first time at a theme park, or her photo from her first day of high school. You can tell that this photo album was made with love and care."
+
+            "As you reach the last page of the album, you notice a missing photo with a little note written:"
+
+            "{i}\"May 19th, 1985. The day I first held Stacy in my arms.\"{/i}"
+
+            "You double check around the photo album, and you find a hidden compartment. Inside was a folded polaroid, which you assume is the missing photo."
+
+            "In the photo was Stacy's mom holding a newborn Stacy. Next to her was a handsome man who looked to be Stacy's father."
+
+            "But knowing Stacy, you knew her father wasn't present in her life, so seeing him in this photo was a bit of a surprise."
+
+            scene bg bedroom with dissolve:
+                zoom 1.7
+                xalign 0.5
+                yalign 1.0
+
+            jump seq7menu
+
+        "Pick up the the journal" if not seen_journal:
+            $ seen_journal = True
+            "As you pick up the leather journal, you can tell it's been well loved."
+
+            "You flip it open and you see pages upon pages filled with writing. You obviously didn't have time to read all of them. Because if you did, you'd be here all day."
+
+            "One section of the journal stuck out to you as you feel an envelope stuck between two pages."
+
+            "You see something written on the envelope."
+
+            "{i}\"To my dearest Stacy\"{/i}"
+
+            "It's a letter addressed to Stacy. You wanted to snoop and read what was inside... But you didn't want to rip it open, especially since the envelope was sealed shut."
+
+            "You turn your attention to the pages the letter was sandwiched between."
+
+            "They were two different entries, written a day apart."
+
+            scene black with dissolve
+
+            centered "{i}October 24, 1985{/i}"
+
+            centered "{i}Steve told me he doesn't love me anymore. I honestly don't know what to do anymore.\nOur daughter is barely a year old, and the idea of raising her alone... It's terrifying.{/i}"
+
+            centered "{i}I don't know what prompted him to say this. I thought our marriage was going along fine, but I guess I thought wrong. I did my best to be the best wife...{/i}"
+
+            centered "{i}Was I not enough?{/i}"
+
+            centered "..."
+
+            centered "{i}October 26, 1985{/i}"
+
+            centered "{i}Steve has started to pack his belongings. He's also barely coming home now...\nI guess I know why he's been coming home late from work these past few months.{/i}"
+
+            centered "{i}I'm wondering, has he found someone else?{/i}"
+
+            centered "{i}Either way, I have to stay strong for me and Stacy.\nIf I have to raise her by myself, so be it. I don't need a man to provide a good life for my daughter.{/i}"
+
+            centered "{i}I don't know when I'll be ready to tell Stacy about her father.\nIn the meantime, I've written this letter that I'll give her whenever I'm ready to.{/i}"
+
+            centered "{i}I know she deserves to know the truth, but... not right now.\nI don't want her to experience heartbreak this early in her life.\nWhat would I even tell her? That her father didn't want her?\n\nThe idea is just too cruel to tell.{/i}"
+
+            centered "{i}For as long as I can, I'll protect her.\nBut I know I can't keep this from her forever.{/i}"
+
+            centered "{i}My Stacy, the light of my life. I'm sorry it had to be this way, but I promise to love you and be there for you the best I can.{/i}"
+
+            scene bg bedroom with dissolve:
+                zoom 1.7
+                xalign 0.5
+                yalign 1.0
+
+            jump seq7menu
+
+        "Leave":
+            jump seq7c
+
+label seq7c:
+    "After going through the contents of the box, a wave of guilt washes over you."
+
+    "You snooped around the belongings of people who trusted you enough to let you in their home. Not to mention your snooping has led you to find out vulnerable information you're not supposed to."
+
+    "With a sigh, you put everything back where you found it."
+
+    "Panic rises when you hear Stacy calling out for you downstairs." with vpunch
+
+    s "[name]? You done yet? Is the computer issue that bad?"
+
+    "You didn't want her to catch you meddling with her mother's belongings, so you scramble to lock the chest with the bobby pins you used before she catches you in the act."
+
+    scene bg bedroom with vpunch:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.1
+    "With a stroke of luck, you manage to lock the chest and put everything back together. You scramble to sit in front of the desk so it looks like you were still working on her mom's computer."
+
+    show bg bedroom_blur with dissolve
+    show stacy neutral_b at chrCenter with dissolve
+    s "How's the computer?"
+
+    p "I-It's alright, haha..."
+
+    p "It was infested with malware, but I was able to track down the main threats without having to wipe her computer..."
+
+    p "It should be alright now."
+
+    show stacy happy_b at bounce
+    s "Great! I just finished baking us some brownies and cooking up some popcorn. I've set the TV up downstairs, so our movie marathon should be good to go!"
+
+    "Phew... Almost caught. You don't know how you would've explained yourself if Stacy had caught you in the act of snooping through her mother's personal belongings."
+    
+    scene black with dissolve
+    "You follow her downstairs and you both enjoy a lazy afternoon of binge watching shitty romcoms."
+
+    "But in the back of your mind, the contents that chest lingers. Your view of both women has been put in a different light, now knowing what both have been through."
+
+    "..."
+
+    jump seq8
+
+label seq8:
+    "seq8 wip"
 
 label end:
+    "end"
     # This ends the game.
     return
