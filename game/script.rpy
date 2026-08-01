@@ -15,6 +15,7 @@ default seen_journal = False
 define p = Character(_("[name]"), color="#53907e")
 define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
+define mx = Character(_("Debbie"), color="#da203f")
 define c = Character(_("Creep"), color="#905d00")
 define y = Character(_("Mr. Yoshida"), color="#5b5b5b")
 define d = Character(_("???"), color="#175fa1")
@@ -1846,7 +1847,7 @@ label stacyEnd:
 
     s "All my life, the people I've dated always wanted my mom over me."
 
-    s "They'd be interested at first, but when they meet my mom, it’s like they stopped caring about me."
+    s "They'd be interested at first, but when they meet my mom, it's like they stopped caring about me."
 
     show stacy sad_a with dissolve
     s "I know it's a harmless crush most of the time, but I can't help it... I can't help but feel worthless every time it happens."
@@ -1871,15 +1872,158 @@ label stacyEnd:
 
     jump end
 
-
 label momEnd:
-    "momwip"
+    hide stacy with easeoutleft
+    show mom happy_a at chrCenter with easeinleft
+    "She's all you want and you've waited for so long..."
+
+    "{i}Stacy's mom...{/i}"
+
+    "{i}Debbie Collins...{/i}"
+
+    scene bg park_night with dissolve
+    "You reach for your phone and hesitate... You don't know what you're doing, this all feels so wrong..."
+
+    "But at the same time, you can't find it in yourself to care anymore. You've liked Stacy's mom for the longest time, and now that you're older and have a stable job, it feels like the right time to make a move."
+
+    "You could be the person that would make Stacy's mom feel loved again."
+
+    "You mustered up the courage and called Stacy's mom."
+
+    p "Hello, Ms. Collins?"
+
+    m "{i}Oh, hello sweetheart! Did you need something?{/i}"
+
+    p "Uhm... I was wondering if you're free at the moment?"
+
+    m "{i}I am, why?{/i}"
+
+    "You swallow hard, it's now or never...!"
+
+    p "Would you... like to have dinner with me?"
+
+    p "I-I know of a good restaurant in my city, and I thought you could appreciate the good food..."
+
+    "You did your best to not be a stuttering mess, but to your dismay your voice still cracked as you nervously asked Stacy's mom out to dinner."
+
+    "The moment you heard a soft giggle through the phone, you felt your shoulders relax."
+
+    m "{i}I would {b}love{/b} to, [name].{/i}"
+
+    "When the phone call ended, you jumped for joy. You managed to ask Stacy's mom out to dinner!" with vpunch
+
+    scene black with wipeleft
+    "You send her the address of the restaurant as you make your way there on foot. Luckily, this restaurant was pretty near your office, give or take a 15 minute walk."
+
+    scene bg fancy_hallway with wipeleft
+    "As you arrived at the restaurant, the usually long line outside it was nowhere to be found. Perfect timing."
+
+    "It's as if it was fate for you to have dinner here with her, the waiter letting you know that there was a vacant table for two."
+
+    "You've heard great things about this restaurant online. People seem to love the food and the ambience it offers."
+
+    scene bg lobby with dissolve
+    "As you enter the establishment, you can't help but notice the place being on the fancier side."
+
+    "You get seated and you straighten up as you wait for Stacy's mom to arrive."
+
+    "In the meantime, you decided to peruse through the menu to possibly order some starters for both you and Stacy's mom."
+
+    "You clear your throat as you sit there nervously, looking around to see if Stacy's mom has arrived yet."
+
+    "You then feel a gentle tap behind you, you look over and it's her..."
+
+    "The woman you've been yearning for all these years."
+
+    show bg lobby_blur with dissolve
+    show mom talk_a at chrCenter with dissolve
+    "Stacy's mom."
+
+    "She smiles as she takes a seat across from you."
+
+    m "I'm sorry... I hope I didn't make you wait long, [name]."
+
+    p "It's alright, Mi- Debbie... It's fine, Debbie."
+
+    show mom talk_d at bounce
+    "You caught her off guard by the shift, this was the first time you've ever used her first name. She's insisted time and time again for you to use it, but you were always so respectful and polite with her."
+
+    show mom wink_talk with dissolve
+    mx "Looks like you finally decided to call me by name, hm?"
+
+    "You felt your ears ringing and going hot at her teasing, but you tried to not make it obvious that she had this effect on you."
+
+    show mom talk_b with dissolve
+    mx "I like it... I like hearing you call me by my name, sweetie."
+
+    p "I-I'm glad then, Debbie..."
+
+    p "I... I hope I'm not overstepping any boundaries by calling you by your first name."
+
+    p "...Am I?"
+
+    show mom happy_c at bounce
+    "Debbie smiles at you and shakes her head."
+
+    mx "Loosen up, hon! It really doesn't bother me."
+
+    p "I ordered some appetizers, they should be here anytime soon."
+
+    scene bg lobby with dissolve
+    "As if on cue, a waiter pulls up to your table and lays out a tasty looking appetizer to start your dinner off."
+
+    "As the dinner went on, you spent the entire time mustering up your courage to confess to Debbie."
+
+    show bg lobby_blur with dissolve
+    show mom talk_f at chrCenter with dissolve
+    "Debbie definitely noticed that something was on your mind. You've barely touched your food after all."
+
+    "You take one long gulp and downed your entire glass of champagne as a way to hype yourself up."
+
+    "Fueled by both your boldness and alcohol, you begin to blurt out the confession to Debbie."
+
+    p "Debbie... You..."
+
+    p "{b}{i}You're all I want, and I've waited for so long...!{/i}{/b}" with vpunch
+
+    "Your eyes widen and you instinctively, covering your mouth now that you realize what you said out loud."
+
+    show mom talk_e with dissolve
+    "Debbie also stares back at you in shock. She was stunned for a moment, unsure if what happened was truly real."
+
+    show mom wink
+    "Before you could take back your confession, you feel a kiss on your cheek." with vpunch
+
+    mx "Are you sure you do, sweetheart? I'm way older than you..."
+
+    p "Well, we're both adults, aren't we...?"
+
+    p "But whenever you're around, I always feel my heart doing this weird... thing. I can never explain what it was up until recently."
+
+    p "Debbie, I have feelings for you, and I don't care if you're my friend's mom!"
+
+    scene bg lobby with dissolve
+    "Debbie chuckles softly at your confession, and you're unsure whether she's reciprocated your feelings or not."
+
+    show bg lobby_blur with dissolve
+    show momcg with easeinright
+    mx "Let's get you home and sobered up, okay?"
+
+    mx "Then we'll properly talk."
+
+    "You didn't expect to fumble your confession like this, but you could tell that Debbie shared the same feelings as you. And honestly, bless her soul for being such an understanding woman."
+
+    "No matter how hard you tried, Stacy was never the girl for you because..."
+
+    "{i}{b}You're in love with Stacy's mom.{/i}{/b}"
+
+    jump end
 
 label end:
     "{b}-- THE END --{/b}"
-    menu:
-        "anti-skip menu":
-            "test"
+    #menu:
+        #"anti-skip menu":
+            #"test"
 
     # This ends the game.
     return
