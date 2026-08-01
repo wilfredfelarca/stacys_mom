@@ -12,10 +12,12 @@ default momLove = 0
 default seen_photos = False
 default seen_journal = False
 
-define p = Character(_("[name]"), color="#60877b")
+define p = Character(_("[name]"), color="#53907e")
 define s = Character(_("Stacy"), color="#b535c9")
 define m = Character(_("Stacy's Mom"), color="#da203f")
 define c = Character(_("Creep"), color="#905d00")
+define y = Character(_("Mr. Yoshida"), color="#5b5b5b")
+define d = Character(_("???"), color="#175fa1")
 
 ### Transforms for various uses such as tweening the characters or scenes.
 
@@ -65,6 +67,29 @@ transform bounce:
         linear 0.05 yzoom 1.1
         linear 0.1 yzoom 1
 
+# Paces character back and forth in a loop
+transform backandforth:
+    linear 1 xoffset -150
+    pause 1.2
+    xzoom -1.0
+    pause 0.5
+    linear 2 xoffset 200
+    pause 1.2
+    xzoom 1.0
+    pause 0.5
+    linear 2 xoffset -200
+    pause 1.2
+    xzoom -1.0
+    pause 0.5
+    linear 2 xoffset 200
+    pause 1.2
+    xzoom 1.0
+    pause 0.5
+    repeat
+
+transform backandforthFinish:
+    linear 0.7 xoffset 0
+    xzoom 1.0
 init:
     # Edits the length of a transition
     $ wipeup = CropMove(0.1, "wipeup")
@@ -415,7 +440,7 @@ label seq3: ## REUNION - STACY BOND
 
     "You felt your ears getting red as you scrambled for your words, and it just made Stacy and her mom giggle."
 
-    show mom talk_e at midright with dissolve
+    show mom talk_e at midright with easeoutright
     show stacy neutral_a at midleft with dissolve
     s "Wanna get out of here?"
 
@@ -1042,7 +1067,7 @@ label seq6stacy: ## OFFICE - STACY BOND
 
     "{i}DING!{/i}"
 
-    scene bg office with wiperight
+    scene bg meeting with wiperight
     
     "The elevator door opens, and you see Stacy in a conference room along with five other people. They all looked exhausted."
 
@@ -1050,7 +1075,7 @@ label seq6stacy: ## OFFICE - STACY BOND
 
     "Her expression lights up the moment she sees you, and she immediately meets you at the door."
 
-    show bg office_blur with dissolve
+    show bg meeting_blur with dissolve
     show stacy happy_a at chrCenter with dissolve
     show package with easeinbottom:
         xalign 0.7
@@ -1458,9 +1483,273 @@ label seq7c:
     jump seq8
 
 label seq8:
-    "seq8 wip"
+    scene bg office with dissolve
+    "It's been a week since you last saw Stacy or her mom. You've been busier than ever at work, and you just yearn for a break."
+
+    "{color=#76915e}Co-worker{/color}" "Hey, [name], would it be okay if you also handled this report? I'm lagging behind on some, and I could really use the extra help."
+
+    p "Again? Are you serious, man?"
+
+    p "Fine, but this is the last time. I'm swamped with other shit I have to worry about."
+
+    "{color=#76915e}Co-worker{/color}" "Thank you!! I'll make it up to you, I promise."
+
+    "You wave your co-worker off as you get back to the pile of paperwork on your desk. You don't know why you took the extra work when you already have so much on your plate."
+
+    "You'd been working yourself like a dog this past week, and you've never felt more dead inside. As you go through the pile of paperwork, you hear a gentle knock to your desk."
+
+    "It's your boss' assistant."
+
+    "{color=#54416e}Assistant{/color}" "Mr. Yoshida's asking for you."
+
+    "You don't know why, but being called up in your boss' office hits you with anxiety. You started overthinking your work performance, afraid that you're about to lose this job."
+
+    p "U-Uh, sure. I'll head over now."
+
+    scene black with wiperight
+
+    "As you make your way to your boss' office, you feel beads of sweat form at your forehead."
+
+    "{i}Is this it? Are you about to get fired?{/i}"
+
+    "{i}Are you about to lose the only reason you get up everyday?{/i}"
+
+    "As sad as it sounds, it is true... These past few years, this job of yours is the only thing pushing you to wake up everyday. No matter how much you're sick of it, it's still something you've grown used to."
+
+    "Standing outside the door to your boss' office, you brace yourself for bad news. You knock gently, and hear him tell you to come in."
+
+    y "[name]! Come in, come in."
+
+    scene bg boss_office with wiperight
+    "You enter nervously, but to your surprise, your boss seems to be in a good mood. Which was {i}extremely{/i} rare..."
+
+    p "You called for me, sir...?"
+
+    show bg boss_office_blur with dissolve
+    show boss at chrCenter with dissolve:
+        yalign 0.1
+    y "I have good news for you."
+
+    show boss at backandforth:
+        yalign 0.1
+    y "Remember that project proposal you presented a month ago?"
+
+    "At the mention of good news, you felt relief flood your wellbeing. You straighten up as he mentioned your project proposal."
+
+    "Truth be told, you almost forgot about that proposal. You spent countless nights preparing for it, but the reaction you got the day you presented it made you think it wasn't a hit with your boss."
+
+    "You didn't mind though. Even if you spent so much time on it, you really weren't that passionate about the project. So the possible rejection didn't sting as much as you expected."
+
+    p "The one for developing an app that offers easy food delivery? What about it, sir?"
+
+    y "I took the most promising proposals from our branch and brought them over to the higher ups."
+
+    y "Yours was the only one approved."
+
+    "You felt your eyes widen at the revelation."
+
+    show boss at backandforthFinish:
+        yalign 0.1
+    y "Not only that, they {i}loved{/i} the idea."
+
+    p "They did...?"
+
+    y "Very much so, they even want to give you a promotion as lead project head."
+
+    y "But the catch is, you will be moving to a different city to start work on this project."
+
+    "Feeling overwhelmed with the sudden barrage of good news, you stood there frozen. You didn't have time to process everything immediately."
+
+    p "Can... Can I think about this for a moment, sir?"
+
+    show boss at bounce:
+        yalign 0.1
+    y "Think? What more can you think of? If I were you, I'd immediately take the offer!"
+
+    p "I really am grateful for this once in a lifetime opportunity, but..."
+
+    p "This is a big change, is it possible for me to request some time to think about it?"
+
+    show boss at bounce, chrCenter:
+        xzoom -1.0
+        yalign 0.1
+    y "Fine, but don't keep the higher ups waiting for too long."
+
+    y "I'll give you until the end of the week to decide."
+
+    p "T-Thank you, Mr. Yoshida...!"
+
+    scene black with dissolve
+
+    "As you left work, you felt a rollercoaster of emotions. On one hand, you were grateful you got this once in a lifetime opportunity."
+
+    "But at the same time... {i}is it really worth it...?{/i}"
+
+    "You weren't passionate about that project at all, and if you took this opportunity, there's a high chance you wouldn't even be happy working on it. Let alone {i}leading{/i} it."
+
+    scene bg park_night with dissolve
+
+    "You find yourself walking along the park, deep in thought."
+
+    "You zone out, and you find yourself thinking about the two women who've added light to your life as of late."
+
+    scene bg schoolpark_sunset_blur with dissolve
+    show stacy happy_c at chrCenter with dissolve
+    "{b}{i}Stacy...{/i}{/b}"
+
+    scene bg house_outside_blur with dissolve
+    show mom happy_a at chrCenter with dissolve
+    "{b}{i}Her mom, Debbie...{/i}{/b}"
+
+    scene bg nightsky with dissolve
+    "You don't want to admit it, but the idea of losing touch with them scares you. You're scared that your life would return to how it usually was."
+
+    "Bleak...\nBoring..."
+    
+    "{i}Lonely...{/i}"
+
+    show stacy happy_c at midleft with easeinbottom
+    show mom happy_a at midright with easeinbottom
+    "But one of them had begun to shine in your heart. You truly treasure the times you've spent with both, your heart can deny it no longer; one of them has truly won your heart."
+
+    "And it was..."
+    menu:
+        "Stacy":
+            if stacyLove >= 3:
+                jump stacyEnd
+            else:
+                jump badEnd
+
+        "Stacy's mom":
+            if momLove >= 3:
+                jump momEnd
+            else:
+                jump badEnd
+
+label badEnd:
+    "It would be..."
+    hide stacy with dissolve
+
+    "It..."
+    hide mom with dissolve
+    pause(1.0)
+    
+    scene black with dissolve
+    "..."
+
+    "A few months passed by since you reconnected with both Stacy and her mom."
+
+    "You decided to not confess to the one that caught your heart. It pained you to do so, but it's for the best."
+
+    "{i}You weren't brave nor strong enough to. You're a coward, that's what you are.{/i}"
+
+    "Despite being surrounded by beautiful women who were excited to reconnect with you, nothing really happened after all of that."
+
+    "Until eventually, your worst fear happened. Distance grew once more between you and the mother-daughter duo."
+
+    "Ever since you got promoted, you've been busier than ever with work. Not to mention you had to relocate to a different city for your job."
+
+    "And the rare chance you did get some free time, you'd rather use it to laze around at home watching tv and drinking beer."
+
+    "Perhaps it's some sort of \"skill issue\" on your end. Or maybe you were dumb enough to miss the signs thrown your way."
+
+    scene bg bar with dissolve
+    "Feeling lonelier than ever, you decide to switch it up for once and drag your feet to a local bar near your new place. Way to spend your time off work I guess."
+
+    "{color=#874b1e}Bartender{/color}" "What will it be for you tonight?"
+
+    p "I don't know... Something strong I guess? I just want to get wasted, man. Go ham."
+
+    "The bartender nods at you and turns around to start whipping something up."
+
+    "When he was done, he slid it over trying to act all cool like those bartenders in shows and movies."
+
+    "Almost like salt on a fresh wound, the drink tips over and spills all over you." with vpunch
+
+    p "WHAT THE FUCK, MAN?"
+
+    p "COULDN'T YOU HAVE JUST GIVEN ME MY DRINK LIKE A NORMAL PERSON?"
+
+    "{color=#874b1e}Bartender{/color}" "I am SO sorry! Let me get you something for that--"
+
+    "As the bartender tries to move behind the counter to grab you a rag to dry yourself off with, he slips on some banana peel like he came out straight from a cartoon."
+
+    "{color=#874b1e}Bartender{/color}" "GAAAAAHHH! My ass...!" with vpunch
+
+    p "You {i}cannot{/i} be serious..."
+
+    "You feel a headache coming up after witnessing this looney tunes type of situation. Until you feel a firm tap on your back."
+
+    d "Rough night? Here, let me help you with that."
+
+    "You look over to see an older gentleman handing you his handkerchief. His voice caught your attention, with how smooth and silky it was. The type of voice you could listen to all night if you had to."
+
+    show bg bar_blur with dissolve
+    show dad talk_a at midleft with easeinleft
+    "Not to mention, this man looked gorgeous. A \"silver fox\" as one could call him."
+
+    p "T-Thanks..."
+
+    show dad talk_a at chrCenter with easeinbottom
+    d "So... What brings you here? Surely somebody as attractive as you can snag someone to drink with. But it seems you're alone."
+
+    p "Yeah, about that... I don't know. I guess I just wanted to drink my sorrows away."
+
+    p "I just recently reconnected with an old friend and her mom."
+
+    p "Maybe I expected something more, but nothing worked out. And now I'm in a new city, feeling as lonely as ever."
+
+    show dad talk_b with dissolve
+    d "That's life for you, bud. Though, I'm a bit confused, are you also close to this person's mom? Why is she part of the conversation?"
+
+    p "Look man, I don't feel like talking about it."
+
+    p "But trust me, {i}Stacy's mom had it going on.{/i}"
+
+    show dad talk_a at bounce
+    d "Stacy? That name takes me back..."
+
+    p "It does? Why...?"
+
+    d "I had a daughter-- Well, I don't think it's fair I call her that."
+
+    show dad talk_b with dissolve
+    d "I was barely in her life anyways..."
+
+    "As you take a closer look at this man, you notice that he looked oddly familiar. You couldn't pinpoint what it was about him, but the more he talked, the more you were able to put the pieces together."
+
+    d "Yeah, I don't even know how I managed to get with her mother."
+
+    show dad talk_c with dissolve
+    d "That woman looked like she walked straight out a magazine."
+
+    "All of this sounded like a coincidence... Surely, it cannot be the same people..."
+
+    "Right...?"
+
+    hide dad with dissolve
+    show dadcg with easeinbottom
+    "Little did you know, the man you were sitting with at the bar was Stacy's dad himself."
+
+    "The same deadbeat who walked out on his wife and newborn kid."
+
+    "You were ashamed to admit it, but honestly?"
+
+    "{b}{i}Stacy's dad is actually pretty bad...{/i}{/b}\n{size=20}(pls get better standards.){/size}"
+
+    jump end
+
+label stacyEnd:
+    "stacywip"
+
+label momEnd:
+    "momwip"
 
 label end:
-    "end"
+    "{b}-- THE END --{/b}"
+    menu:
+        "anti-skip menu":
+            "test"
+
     # This ends the game.
     return
